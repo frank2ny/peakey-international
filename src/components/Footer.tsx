@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12 mb-16">
           <div className="lg:col-span-5 lg:border-r border-slate-800/80 lg:pr-8">
             <a href="#home" className="flex items-center gap-3 mb-6 transition-opacity hover:opacity-80">
-              <img src="\pklogo.png" alt="Peakey International Logo" className="h-12 w-auto brightness-0 invert opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+              <img src="\PK.png" alt="Peakey International Logo" className="h-12 w-auto brightness-0 invert opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight text-white leading-none">
                   PEAKEY
@@ -25,7 +25,7 @@ export function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed pr-4 mb-8 max-w-sm">
               {t('footer.description')}
             </p>
-            
+
             {/* Certifications / Professional Bodies */}
             <div className="mb-8">
               <h4 className="text-[10px] font-black tracking-widest text-slate-500 uppercase mb-4">Certifications & Accreditations</h4>
@@ -57,7 +57,7 @@ export function Footer() {
               </a>
             </div>
           </div>
-          
+
           <div className="lg:col-span-2">
             <h3 className="text-[11px] font-black tracking-[0.2em] uppercase text-white mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-red-600"></span> {t('footer.company')}
@@ -87,7 +87,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm font-medium">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400 font-light">Dar es Salaam, Tanzania<br/>Global Operations Hub</span>
+                <span className="text-slate-400 font-light">Dar es Salaam, Tanzania<br />Global Operations Hub</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-red-500 flex-shrink-0" />
@@ -103,7 +103,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-[11px] text-slate-500 border-t border-slate-800/80 pt-8">
           <div className="font-bold tracking-wider uppercase">
             &copy; {new Date().getFullYear()} Peakey International Group. {t('footer.rights')}
