@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  @apply bg-[#f8fafc] text-slate-800 font-sans;
+}
+
+@media print {
+  nav, footer, .ScrollToTop, button[aria-label="Scroll to top"] {
+    display: none !important;
+  }
+
+  body {
+    background: transparent !important;
+    background-color: white !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Make sure sections and cards don't break awkwardly across pages */
+  section, .group, .card, article {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Flatten shadows and keep borders for print visibility */
+  .shadow-xl, .shadow-2xl, .shadow-md, .shadow-lg, .shadow-sm {
+    box-shadow: none !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+}

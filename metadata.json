@@ -1,0 +1,6 @@
+{
+  "name": "Peakey International",
+  "description": "Corporate website for Peakey International featuring professional design, multilingual support, and a secure contact form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
