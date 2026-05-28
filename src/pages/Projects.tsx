@@ -132,47 +132,123 @@ const TiltProjectCard: React.FC<{ project: any, idx: number, isExpanded: boolean
 }
 
 function GlobalMap() {
-  const locations = [
-    { top: '35%', left: '22%', name: 'North America Projects' },
-    { top: '65%', left: '32%', name: 'South America Operations' },
-    { top: '55%', left: '52%', name: 'African Headquarters (Dar Es Salaam)' },
-    { top: '30%', left: '50%', name: 'European Partners' },
-    { top: '45%', left: '72%', name: 'Asian Markets' },
-    { top: '75%', left: '85%', name: 'Oceania Reach' },
+  const hq = { x: 50, y: 55, name: 'African Headquarters (Dar Es Salaam)', role: 'Core Operations Hub' };
+  
+  const branches = [
+    { x: 20, y: 35, name: 'North America', role: 'Strategic Partners' },
+    { x: 25, y: 70, name: 'South America', role: 'Engineering Operations' },
+    { x: 45, y: 30, name: 'Europe', role: 'Consulting Affiliates' },
+    { x: 75, y: 40, name: 'Asia', role: 'Supply Chain Operations' },
+    { x: 85, y: 75, name: 'Oceania', role: 'Regional Projects' },
   ];
 
   return (
-    <div className="w-full max-w-5xl mx-auto mb-20 pt-10">
-      <div className="text-center mb-10">
+    <div className="w-full max-w-6xl mx-auto mb-20 pt-10">
+      <div className="text-center mb-12">
          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">Global Reach</div>
          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Active Across Continents</h2>
-         <p className="text-slate-500 mt-4 font-light max-w-2xl mx-auto">Our footprint spans the globe, delivering high-value consulting and structural engineering excellence regardless of borders.</p>
+         <p className="text-slate-500 mt-4 font-light max-w-2xl mx-auto">Our cohesive global network seamlessly connects engineering operations and strategic partnerships, driving high-value consulting worldwide.</p>
       </div>
-      <div className="relative aspect-[2/1] w-full bg-slate-50 rounded-3xl overflow-hidden border border-slate-200 shadow-inner group">
-        {/* Abstract Map Graphic (Grid) */}
-        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-100/50"></div>
-        
-        {/* Continents rough outlines / abstract representation */}
-        <svg className="absolute inset-0 w-full h-full text-slate-200 fill-current opacity-50" viewBox="0 0 1000 500" preserveAspectRatio="none">
-           <path d="M 150 100 Q 200 50 300 150 T 250 300 T 150 100 M 450 100 Q 550 50 600 200 T 450 350 T 450 100 M 650 50 Q 800 100 850 250 T 700 300 T 650 50 M 200 350 Q 300 350 250 450 T 150 400 T 200 350 M 800 350 Q 900 300 950 400 T 800 450 T 800 350" />
+
+      <div className="relative aspect-[2.2/1] min-h-[400px] w-full bg-[linear-gradient(135deg,theme(colors.slate.50),theme(colors.slate.100))] rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-300/30 group p-4 sm:p-8">
+        {/* Animated grid background for technical feel */}
+        <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:32px_32px] opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent"></div>
+
+        {/* Dynamic connection lines SVG */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+           <defs>
+              <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                 <stop offset="0%" stopColor="#dc2626" stopOpacity="0.2" />
+                 <stop offset="50%" stopColor="#dc2626" stopOpacity="0.6" />
+                 <stop offset="100%" stopColor="#dc2626" stopOpacity="0.2" />
+              </linearGradient>
+           </defs>
+           
+           {branches.map((branch, i) => {
+             // Control point for a gentle curve
+             const cx = (hq.x + branch.x) / 2 + (branch.y > hq.y ? -10 : 10);
+             const cy = (hq.y + branch.y) / 2 - 20;
+             const path = `M ${hq.x}% ${hq.y}% Q ${cx}% ${cy}% ${branch.x}% ${branch.y}%`;
+             
+             return (
+               <g key={`connection-${i}`}>
+                 {/* Base track */}
+                 <path 
+                   d={path} 
+                   fill="none" 
+                   stroke="url(#line-gradient)" 
+                   strokeWidth="2" 
+                   className="opacity-50"
+                 />
+                 {/* Animated dashed line */}
+                 <path 
+                   d={path} 
+                   fill="none" 
+                   stroke="#ef4444" 
+                   strokeWidth="2" 
+                   strokeDasharray="6 12"
+                   className={`animate-[dash_40s_linear_infinite] opacity-60 ${i % 2 === 0 ? '[animation-direction:reverse]' : ''}`}
+                 />
+                 <circle fill="#dc2626" r="3">
+                   <animateMotion 
+                     dur={`${3 + (i % 3)}s`} 
+                     repeatCount="indefinite" 
+                     path={`M ${hq.x} ${hq.y} Q ${cx} ${cy} ${branch.x} ${branch.y}`} 
+                   />
+                 </circle>
+               </g>
+             );
+           })}
         </svg>
 
-        {locations.map((loc, i) => (
+        {/* Render Headquarters */}
+        <div 
+          className="absolute flex flex-col items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-20"
+          style={{ top: `${hq.y}%`, left: `${hq.x}%` }}
+        >
+          <div className="relative w-6 h-6 flex items-center justify-center">
+            <span className="absolute w-12 h-12 rounded-full bg-red-600/20 animate-ping"></span>
+            <span className="relative w-4 h-4 rounded-full bg-red-600 border-[3px] border-white shadow-lg shadow-red-600/50"></span>
+          </div>
+          <div className="absolute top-8 bg-white px-4 py-2 rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col items-center min-w-[160px]">
+            <span className="text-[9px] uppercase font-black tracking-widest text-red-500 mb-0.5">Headquarters</span>
+            <span className="text-xs font-bold text-slate-800 whitespace-nowrap">{hq.name}</span>
+          </div>
+        </div>
+
+        {/* Render Branches */}
+        {branches.map((branch, i) => (
           <div 
-             key={i} 
-             className="absolute flex items-center justify-center cursor-crosshair transform -translate-x-1/2 -translate-y-1/2 z-10"
-             style={{ top: loc.top, left: loc.left }}
+             key={`node-${i}`} 
+             className="absolute flex flex-col items-center justify-center transform -translate-x-1/2 -translate-y-1/2 z-10 group cursor-pointer"
+             style={{ top: `${branch.y}%`, left: `${branch.x}%` }}
           >
-             <span className="absolute w-8 h-8 rounded-full bg-red-600/20 animate-ping"></span>
-             <span className="absolute w-4 h-4 rounded-full bg-red-600/40 animate-pulse"></span>
-             <span className="relative w-2 h-2 rounded-full bg-red-600 border border-white shadow-sm transition-transform duration-300 hover:scale-150"></span>
-             
-             {/* Tooltip */}
-             <div className="absolute top-full mt-3 opacity-0 group-hover:opacity-100 hover:opacity-100 transition-opacity bg-slate-900 text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3 rounded shadow-xl whitespace-nowrap pointer-events-none">
-                {loc.name}
-                <div className="absolute -top-1 left-1/2 -translate-x-1/2 border-solid border-b-slate-900 border-b-4 border-l-transparent border-l-4 border-r-transparent border-r-4"></div>
+             <div className="relative w-4 h-4 flex items-center justify-center transition-transform hover:scale-125 duration-300">
+               <span className="absolute w-full h-full rounded-full bg-slate-900/10"></span>
+               <span className="relative w-2.5 h-2.5 rounded-full bg-slate-800 border-2 border-white shadow-sm"></span>
              </div>
+             
+             {/* Data Card (shows on hover) */}
+             <div className="absolute top-6 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-white px-4 py-2.5 rounded-xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col items-center min-w-[140px] pointer-events-none z-30">
+                <span className="text-[9px] uppercase font-bold tracking-widest text-slate-400 mb-0.5">{branch.role}</span>
+                <span className="text-xs font-bold text-slate-800 whitespace-nowrap">{branch.name}</span>
+             </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Global Stats bar below network */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+        {[
+          { label: 'Countries Active', value: '45+' },
+          { label: 'Global Workforce', value: '850+' },
+          { label: 'Projects Completed', value: '1,200+' },
+          { label: 'International Partners', value: '15' }
+        ].map((stat, i) => (
+          <div key={i} className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center justify-center text-center">
+            <span className="text-2xl font-black text-red-600 mb-1">{stat.value}</span>
+            <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500">{stat.label}</span>
           </div>
         ))}
       </div>
@@ -241,7 +317,7 @@ export function Projects() {
       client: "TANZANIA ELECTRIC SUPPLY COMPANY LIMITED",
       location: "Ihumwa, Dodoma",
       status: "ONGOING",
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+      img: "\tanesco.jpg",
       value: "TSHS. 4,920,350,000"
     },
     {
@@ -250,7 +326,7 @@ export function Projects() {
       client: "NATIONAL IDENTIFICATION AUTHORITY",
       location: "Kibaha, Coastal Region",
       status: "ONGOING",
-      img: "https://images.unsplash.com/photo-1545607567-cda49e0db4df?auto=format&fit=crop&q=80&w=800",
+      img: "\NIDA.jpeg",
       value: "USD 3,868,245.5"
     },
     {
@@ -259,7 +335,7 @@ export function Projects() {
       client: "NATIONAL SOCIAL SECURITY FUND",
       location: "Dar es Salaam",
       status: "ONGOING",
-      img: "https://images.unsplash.com/photo-1577402830867-0c74ce52e72c?auto=format&fit=crop&q=80&w=800",
+      img: "\nssf.jpg",
       value: "Confidential"
     },
     {
@@ -268,7 +344,7 @@ export function Projects() {
       client: "MINISTRY OF FOREIGN AFFAIRS",
       location: "Kigali, Rwanda",
       status: "ONGOING",
-      img: "https://images.unsplash.com/photo-1448697138198-9aa6d0d84bf4?auto=format&fit=crop&q=80&w=800",
+      img: "\rwanda.jpg",
       value: "USD 23,846,153.85"
     },
     {
@@ -277,7 +353,7 @@ export function Projects() {
       client: "NATIONAL IDENTIFICATION AUTHORITY",
       location: "Dodoma",
       status: "ONGOING",
-      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+      img: "\NIDA.jpeg",
       value: "USD 19,067,434.05"
     }
   ];

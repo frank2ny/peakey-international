@@ -6,15 +6,38 @@ import { Send, CheckCircle, MapPin, Phone, Mail } from 'lucide-react';
 
 export function Contact() {
   const { t } = useTranslation();
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
-    // Simulate secure form payload transmission
-    setTimeout(() => {
+    const formData = new FormData(e.currentTarget);
+    
+    // Honeypot check for naive bots
+    const honey = formData.get('_honey');
+    if (honey) {
+      // Silently succeed to trick the bot
       setStatus('success');
-    }, 1500);
+      return;
+    }
+
+    setStatus('submitting');
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/info@peakeyinternational.com', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -51,6 +74,7 @@ export function Contact() {
                   <div>
                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email</h4>
                     <p className="text-slate-900 font-medium">peakeyinternational@gmail.com</p>
+                    <p className="text-slate-900 font-medium">info@peakeyinternational.com</p>
                   </div>
                 </div>
 
@@ -106,6 +130,16 @@ export function Contact() {
           ) : (
             <div className="bg-[linear-gradient(145deg,theme(colors.white),theme(colors.slate.50))] p-8 sm:p-12 rounded-3xl shadow-lg shadow-slate-300/30 border border-slate-200 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-400/40 hover:border-slate-300">
               <form onSubmit={handleSubmit} className="space-y-6">
+                
+                {/* Security & Configuration Fields (Background) */}
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="New Inquiry from Peakey International Website" />
+                <input type="hidden" name="_template" value="table" />
+                <div className="absolute left-[-9999px] opacity-0" aria-hidden="true">
+                  <label htmlFor="honey">Do not fill this out if you are human</label>
+                  <input type="text" name="_honey" id="honey" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <div>
                   <label htmlFor="name" className="sr-only">
                     {t('contact.name')}
@@ -149,13 +183,18 @@ export function Contact() {
                 </div>
 
                 <div className="pt-4">
+                  {status === 'error' && (
+                    <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-sm text-center">
+                      Failed to send message. Please try again later.
+                    </div>
+                  )}
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
                     className="w-full flex justify-center items-center gap-2 bg-red-600 text-white text-sm font-black uppercase tracking-widest py-4 rounded-xl shadow-xl shadow-red-900/20 hover:bg-red-700 disabled:opacity-70 transition-all"
                   >
                     {status === 'submitting' ? 'Sending...' : t('contact.submit')}
-                    {!status && <Send className="h-4 w-4 ml-1" />}
+                    {status !== 'submitting' && <Send className="h-4 w-4 ml-1" />}
                   </button>
                 </div>
               </form>

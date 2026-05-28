@@ -9,24 +9,19 @@ export function Home() {
 
   const slides = [
     {
-      img: "https://images.unsplash.com/photo-1541888081691-1ec85c1cbb7a?auto=format&fit=crop&q=80&w=2000",
+      img: "/hero1.jpg",
       title: "Active Constructions",
       subtitle: "Transforming the construction industry with monumental structural engineering solutions."
     },
     {
-      img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000",
+      img: "/hero2.jpg",
       title: "Industrial & Mechanical",
       subtitle: "Advanced electro-mechanical engineering supporting factories and complex operations."
     },
     {
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
+      img: "/hero3.jpg",
       title: "Government & Corporate",
       subtitle: "Delivering secure, sustainable architectural designs for public and official institutions."
-    },
-    {
-      img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6f0d8?auto=format&fit=crop&q=80&w=2000",
-      title: "Healthcare Facilities",
-      subtitle: "Responsive, precision-engineered environments for modern hospitals and medical centers."
     }
   ];
 
@@ -54,16 +49,16 @@ export function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              <span className="text-[10px] font-bold text-white uppercase tracking-widest">Global Expertise</span>
+              <span className="text-[10px] font-bold text-white uppercase tracking-widest">{t('hero.badge', 'Global Expertise')}</span>
             </div>
             
             <h1 className="text-5xl sm:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight drop-shadow-xl">
-              Building<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-300">The Future.</span>
+              {t('hero.title').split(' ').slice(0, 2).join(' ')}<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-300">{t('hero.title').split(' ').slice(2).join(' ')}</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-slate-200 leading-relaxed mb-10 max-w-2xl font-light">
-              We deliver cost-effective, sustainable, and aesthetically pleasing design and construction solutions worldwide.
+              {t('hero.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -71,13 +66,13 @@ export function Home() {
                 href="#services"
                 className="group relative flex items-center justify-center gap-3 bg-gradient-to-r from-red-700 to-red-600 overflow-hidden text-white px-8 py-4 rounded-xl text-sm sm:text-base font-black tracking-widest uppercase transition-all hover:from-red-800 hover:to-red-700 shadow-2xl shadow-red-900/50"
               >
-                <span className="relative z-10">Our Services</span>
+                <span className="relative z-10">{t('hero.cta')}</span>
               </a>
               <a
                 href="#projects"
                 className="group flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-xl text-sm sm:text-base font-black tracking-widest uppercase transition-all hover:bg-white/20 hover:bg-white/30"
               >
-                Corporate Profile
+                {t('hero.secondary_cta', 'Corporate Profile')}
               </a>
             </div>
           </motion.div>

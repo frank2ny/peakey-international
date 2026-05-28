@@ -3,37 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Peakey International | Engineering & Construction Group</title>
-    
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Peakey International | Engineering & Construction Group" />
-    <meta name="description" content="Peakey International is a premier multi-disciplinary group providing architectural, structural, and electro-mechanical engineering services, driving innovative and sustainable construction globally." />
-    <meta name="keywords" content="Peakey International, engineering, construction, architecture, structural engineering, mechanical engineering, electrical engineering, project management, AQRB, ERB certified, Tanzania, Dar es Salaam" />
-    <meta name="author" content="Peakey International" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content="Peakey International Group - Delivering Global Excellence in Structural, Civil, and Mechanical Engineering, as well as premium architectural and project management services." />
+    <meta name="keywords" content="Peakey International, Engineering, Structural Engineering, Civil Engineering, Mechanical Engineering, Architectural Design, Project Management, Consulting, Tanzania, Global Excellence, Built Environment" />
+    <meta name="author" content="Peakey International Group" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://peakeyinternational.com/" />
-
-    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Peakey International Group - Global Engineering Excellence" />
+    <meta property="og:description" content="Transforming the construction and consultancy industry with globally recognized standards." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://peakeyinternational.com/" />
-    <meta property="og:title" content="Peakey International | Engineering & Construction Group" />
-    <meta property="og:description" content="Peakey International is a premier multi-disciplinary group providing architectural, structural, and electro-mechanical engineering services, driving innovative and sustainable construction globally." />
-    <meta property="og:image" content="https://peakeyinternational.com/pklogo.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://peakeyinternational.com/" />
-    <meta property="twitter:title" content="Peakey International | Engineering & Construction Group" />
-    <meta property="twitter:description" content="Peakey International is a premier multi-disciplinary group providing architectural, structural, and electro-mechanical engineering services, driving innovative and sustainable construction globally." />
-    <meta property="twitter:image" content="https://peakeyinternational.com/pklogo.png" />
-
-    <!-- Theme & Icons -->
+    <meta property="og:url" content="https://peakeyinternational.com" />
+    <meta property="og:image" content="/pklogo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Peakey International Group - Global Engineering Excellence" />
+    <meta name="twitter:description" content="Delivering Global Excellence in Structural, Civil, and Mechanical Engineering." />
+    <meta name="twitter:image" content="/pklogo.png" />
+    <title>Peakey International Group - Global Engineering Excellence</title>
+    <link rel="preload" href="/pklogo.png" as="image" />
     <meta name="theme-color" content="#dc2626" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <style>
+        #global-loader {
+          position: fixed;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f8fafc;
+          z-index: 9999;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .loader-logo {
+          width: 120px;
+          height: auto;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .circular-loader {
+          width: 40px;
+          height: 40px;
+          border: 3px solid #f1f5f9;
+          border-top-color: #dc2626;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: .5; }
+        }
+      </style>
+      <div id="global-loader">
+        <img src="/pklogo.png" alt="Peakey International" class="loader-logo" />
+        <div class="circular-loader"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

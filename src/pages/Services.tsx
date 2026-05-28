@@ -88,7 +88,8 @@ export function Services() {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <a 
-              href="#" 
+              href="/PEAKEY INTERNATIONAL - GENERAL COMPANY PROFILE 2026.pdf"
+              download
               className="inline-flex items-center gap-3 bg-red-600 text-white rounded-full px-10 py-5 font-black tracking-widest text-lg md:text-xl uppercase transition-all shadow-xl shadow-red-900/20 hover:bg-red-700 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-900/40"
             >
               Company Profile

@@ -108,31 +108,71 @@ export function About() {
           </motion.div>
         </div>
 
-        {/* Values Section */}
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-            <div className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-slate-200">What Drives Us</div>
-            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Core Values</h2>
+        {/* Values Section: Creative Tree Structure */}
+        <div className="mb-10 text-center max-w-2xl mx-auto">
+            <div className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-3 border border-slate-200">What Drives Us</div>
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">Core Values</h2>
+            <p className="text-slate-500 font-light max-w-lg mx-auto">The fundamental principles branching out to shape our global operations and deliver excellence.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {values.map((v, i) => (
-             <motion.div
-               key={i}
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ delay: i * 0.1 }}
-               className="group relative bg-[linear-gradient(145deg,theme(colors.white),theme(colors.slate.50))] p-8 rounded-3xl shadow-lg shadow-slate-200/40 border border-slate-100 flex flex-col items-start hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-400/40 transition-all duration-500 overflow-hidden"
-             >
-                <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.06] transition-all duration-500 transform group-hover:scale-125 group-hover:-rotate-12 pointer-events-none">
-                  <v.icon className="w-32 h-32" />
-                </div>
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-red-600 mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 relative z-10 border border-slate-100 group-hover:border-red-600">
-                  <v.icon className="w-6 h-6" />
-                </div>
-                <h4 className="text-lg font-black text-slate-900 mb-3 relative z-10">{v.title}</h4>
-                <p className="text-sm text-slate-500 leading-relaxed font-light relative z-10">{v.desc}</p>
-             </motion.div>
-          ))}
+        
+        <div className="relative max-w-5xl mx-auto py-4 px-4 sm:px-0">
+          {/* Central Trunk / Stem */}
+          <div className="absolute top-0 bottom-0 left-[38px] md:left-1/2 w-1.5 bg-gradient-to-b from-slate-100 via-red-200 to-slate-100 rounded-full transform md:-translate-x-1/2 flex flex-col justify-between items-center py-4">
+             {/* Decorative flowing particles could be simulated with CSS, keeping it clean */}
+          </div>
+          
+          <div className="space-y-6 md:space-y-4 relative z-10">
+            {values.map((v, i) => (
+               <motion.div
+                 key={i}
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true, margin: "-100px" }}
+                 transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
+                 className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-0 ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+               >
+                 {/* Spacer for alternating layout */}
+                 <div className="hidden md:block flex-1"></div>
+                 
+                 {/* Connection Node / Tree Joint */}
+                 <div className="absolute left-[39px] md:left-1/2 transform -translate-x-1/2 flex items-center justify-center z-20 w-16 h-16">
+                   <div className={`absolute top-1/2 transform -translate-y-1/2 hidden md:block h-[2px] w-12 lg:w-24 bg-gradient-to-${i % 2 === 0 ? 'l' : 'r'} from-red-300 to-transparent ${i % 2 === 0 ? 'right-full' : 'left-full'}`}></div>
+                   <motion.div 
+                     whileHover={{ scale: 1.15, rotate: 5 }}
+                     className="w-14 h-14 rounded-2xl md:rounded-full bg-white shadow-xl shadow-red-900/20 border-[3px] border-red-500 flex items-center justify-center relative group cursor-pointer z-10 overflow-hidden"
+                   >
+                     <div className="absolute inset-0 bg-red-50 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                     <v.icon className="w-6 h-6 text-red-600 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                     {/* Gentle pulse */}
+                     <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-20 duration-[3s]"></div>
+                   </motion.div>
+                 </div>
+
+                 {/* Branch Content Card */}
+                 <div className={`flex-1 w-full pl-24 md:pl-0 ${i % 2 === 0 ? 'md:pr-12 md:text-right lg:pr-24' : 'md:pl-12 md:text-left lg:pl-24'}`}>
+                   <motion.div
+                     whileHover={{ y: -5, scale: 1.02 }}
+                     className={`bg-[linear-gradient(145deg,theme(colors.white),theme(colors.slate.50))] p-8 sm:p-10 rounded-3xl shadow-lg border relative group hover:shadow-2xl transition-all duration-500 ${
+                       i % 2 === 0 
+                         ? 'shadow-slate-200/40 border-slate-100 hover:shadow-red-900/10 hover:border-red-200 md:rounded-tr-md' 
+                         : 'shadow-slate-200/40 border-slate-100 hover:shadow-red-900/10 hover:border-red-200 md:rounded-tl-md'
+                     }`}
+                   >
+                     {/* Subtle branch background graphic */}
+                     <div className={`absolute top-0 opacity-[0.03] pointer-events-none transform transition-transform duration-700 group-hover:scale-110 group-hover:opacity-[0.05] ${i % 2 === 0 ? 'left-4 rotate-[-15deg]' : 'right-4 rotate-[15deg]'}`}>
+                       <v.icon className="w-40 h-40" />
+                     </div>
+                     
+                     <div className={`flex flex-col relative z-10 ${i % 2 === 0 ? 'md:items-end' : 'md:items-start'}`}>
+                       <span className="text-red-500 font-black text-4xl opacity-20 mb-2 font-serif">0{i + 1}</span>
+                       <h4 className="text-2xl font-black text-slate-900 mb-3 drop-shadow-sm">{v.title}</h4>
+                       <p className="text-base text-slate-500 font-light leading-relaxed">{v.desc}</p>
+                     </div>
+                   </motion.div>
+                 </div>
+               </motion.div>
+            ))}
+          </div>
         </div>
 
       </div>

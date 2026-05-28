@@ -1,8 +1,4 @@
-# www.robotstxt.org/
-
-# Allow all robots to crawl and index our content
 User-agent: *
 Allow: /
 
-# Link to our dynamic XML sitemap
 Sitemap: https://peakeyinternational.com/sitemap.xml

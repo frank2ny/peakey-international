@@ -22,6 +22,33 @@ export function Navbar() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let currentHash = activeHash;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            currentHash = `#${entry.target.id}`;
+          }
+        });
+        if (currentHash !== activeHash && currentHash) {
+          setActiveHash(currentHash);
+          // Optional: silently update URL without jump
+          // window.history.replaceState(null, '', currentHash);
+        }
+      },
+      { rootMargin: '-30% 0px -70% 0px' }
+    );
+
+    const navLinksList = ['home', 'about', 'organization', 'services', 'projects', 'blog', 'contact'];
+    navLinksList.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [activeHash]);
+
   const changeLanguage = (lng: string) => i18n.changeLanguage(lng);
 
   const navLinks = [
@@ -36,19 +63,19 @@ export function Navbar() {
 
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-      scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg py-3' : 'bg-white py-5 shadow-sm'
+      scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg py-2' : 'bg-white py-3 shadow-sm'
     }`}>
-      <div className="mx-auto flex items-center justify-between max-w-[1280px] px-6 sm:px-12">
-        <a href="#home" className="flex items-center gap-3 transition-transform hover:scale-105 z-50 relative" onClick={(e) => { if (isOpen) { setIsOpen(false); } }}>
-          <img src="/pklogo.png" alt="Peakey International Logo" className="h-12 w-auto drop-shadow-md" />
-          <span className="text-xl font-extrabold tracking-tight text-slate-900 hidden sm:flex flex-col leading-tight">
+      <div className="mx-auto flex items-center justify-between max-w-[1280px] px-4 sm:px-12">
+        <a href="#home" className="flex items-center gap-2 transition-transform hover:scale-105 z-50 relative" onClick={(e) => { if (isOpen) { setIsOpen(false); } }}>
+          <img src="/pklogo.png" alt="Peakey International Logo" className="h-9 sm:h-10 w-auto drop-shadow-md" />
+          <span className="text-lg font-extrabold tracking-tight text-slate-900 hidden sm:flex flex-col leading-tight">
             <span>PEAKEY</span>
-            <span className="text-red-700 text-[10px] tracking-widest uppercase">International</span>
+            <span className="text-red-700 text-[9px] tracking-widest uppercase">International</span>
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex lg:items-center lg:gap-6 bg-slate-50/50 px-6 py-2.5 rounded-full border border-slate-100">
+        <nav className="hidden lg:flex lg:items-center lg:gap-6 bg-slate-50/50 px-6 py-1.5 rounded-full border border-slate-100">
           <div className="flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-500">
             {navLinks.map((link) => (
               <a
@@ -112,7 +139,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="fixed inset-0 z-40 bg-white flex flex-col pt-20 px-4 lg:hidden h-[100dvh]"
+            className="fixed inset-0 z-40 bg-white flex flex-col pt-16 px-4 lg:hidden h-[100dvh]"
           >
             <div className="flex flex-col gap-0.5 overflow-y-auto pb-8 h-full">
               {navLinks.map((link, idx) => (

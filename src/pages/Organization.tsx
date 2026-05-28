@@ -10,7 +10,7 @@ export function Organization() {
     {
       id: "mhenga",
       name: "QS. Dr. Mhenga Agneta",
-      image: "/QS. Dr. Mhenga Agneta.jpg",
+      image: "/qs.png",
       role: "Deputy Honorary Secretary, TIQS / Reviewer & Expert",
       bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum, China. She also holds a BSc. Degree in Building Economics from Ardhi University.",
       details: [
