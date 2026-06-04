@@ -47,8 +47,8 @@ export function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-red-700 to-red-500 rounded-3xl blur-2xl opacity-30 transform translate-y-8 translate-x-8"></div>
             <img 
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1200" 
-              alt="Team Strategy" 
+              src="/overview.jpg" 
+              alt="Peakey International Team Meeting" 
               className="relative w-full h-auto aspect-square lg:aspect-[4/3] object-cover rounded-3xl shadow-lg border border-white transition-all duration-500 hover:shadow-2xl hover:shadow-slate-400/50 hover:-translate-y-2"
             />
             
@@ -67,43 +67,54 @@ export function About() {
         </div>
 
         {/* Mission / Vision Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-5xl mx-auto">
+          {/* Our Vision Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[linear-gradient(135deg,theme(colors.white),theme(colors.slate.50))] rounded-3xl p-10 shadow-lg shadow-slate-300/30 border border-slate-200 relative overflow-hidden group hover:shadow-2xl hover:shadow-slate-400/40 hover:-translate-y-2 transition-all duration-500 font-sans"
+            className="bg-white/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-md shadow-slate-200/30 border border-slate-200/60 relative overflow-hidden group hover:shadow-xl hover:shadow-slate-300/40 hover:-translate-y-1 hover:border-red-200 transition-all duration-500"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Target className="w-32 h-32" />
+            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Target className="w-24 h-24 text-red-600" />
             </div>
-            <div className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-red-900/20">
-              <Target className="w-7 h-7" />
+            <div className="w-11 h-11 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6 border border-red-100/50 shadow-sm group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+              <Target className="w-5.5 h-5.5" />
             </div>
-            <h3 className="text-2xl font-black text-slate-900 mb-4">Our Vision</h3>
-            <p className="text-slate-600 leading-relaxed font-light text-lg">
+            <h3 className="text-xl font-black text-slate-900 mb-3 tracking-tight">Our Vision</h3>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
               To transform the construction and consultancy industry by providing excellent international consulting services characterized by quality, innovation, transparency and adherence to international standards.
             </p>
           </motion.div>
 
+          {/* Our Mission Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-slate-900 rounded-3xl p-10 shadow-lg shadow-slate-900/50 border border-slate-800 relative overflow-hidden group font-sans bg-gradient-to-br from-slate-900 to-slate-800 hover:shadow-2xl hover:shadow-slate-900/80 hover:-translate-y-2 transition-all duration-500"
+            className="bg-white/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-md shadow-slate-200/30 border border-slate-200/60 relative overflow-hidden group hover:shadow-xl hover:shadow-slate-300/40 hover:-translate-y-1 hover:border-red-200 transition-all duration-500"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-              <Flame className="w-32 h-32" />
+            <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Flame className="w-24 h-24 text-red-600" />
             </div>
-            <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-red-500 mb-8 border border-white/20">
-              <Flame className="w-7 h-7" />
+            <div className="w-11 h-11 bg-red-50 text-red-600 rounded-xl flex items-center justify-center mb-6 border border-red-100/50 shadow-sm group-hover:bg-red-600 group-hover:text-white transition-all duration-300">
+              <Flame className="w-5.5 h-5.5" />
             </div>
-            <h3 className="text-2xl font-black text-white mb-4">Our Mission</h3>
-            <ul className="text-slate-300 leading-relaxed space-y-4 font-light">
-              <li className="flex gap-3"><span className="text-red-500 text-lg">▪</span> Deliver cost-effective, sustainable, and aesthetically pleasing solutions.</li>
-              <li className="flex gap-3"><span className="text-red-500 text-lg">▪</span> Prioritize client interests with efficiency, trust, and responsiveness.</li>
-              <li className="flex gap-3"><span className="text-red-500 text-lg">▪</span> Earn stakeholder trust through quality services and value for money.</li>
+            <h3 className="text-xl font-black text-slate-900 mb-3 tracking-tight">Our Mission</h3>
+            <ul className="text-sm sm:text-base text-slate-600 leading-relaxed space-y-3.5 font-light">
+              <li className="flex items-start gap-3">
+                <span className="text-red-600 font-black mt-1 shrink-0">•</span>
+                <span>Deliver cost-effective, sustainable, and aesthetically pleasing solutions.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-red-600 font-black mt-1 shrink-0">•</span>
+                <span>Prioritize client interests with efficiency, trust, and responsiveness.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-red-600 font-black mt-1 shrink-0">•</span>
+                <span>Earn stakeholder trust through quality services and value for money.</span>
+              </li>
             </ul>
           </motion.div>
         </div>

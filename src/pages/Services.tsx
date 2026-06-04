@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../components/PageHeader';
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Services() {
   const { t } = useTranslation();
@@ -59,24 +60,29 @@ export function Services() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="flex flex-col items-center w-36 sm:w-48 lg:w-56 group cursor-pointer"
+                className="w-36 sm:w-48 lg:w-56"
               >
-                <div className="w-32 h-32 sm:w-44 sm:h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border-4 sm:border-[6px] border-red-600 shadow-xl p-1 bg-white mb-4 sm:mb-6 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.4)] relative">
-                  <div className="w-full h-full rounded-full overflow-hidden relative">
-                    <div className="absolute inset-0 bg-slate-900/10 z-10 group-hover:bg-transparent transition-colors"></div>
-                    <img 
-                      src={service.img} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                    />
+                <Link 
+                  to={`/services#${service.id}`}
+                  className="flex flex-col items-center group cursor-pointer"
+                >
+                  <div className="w-32 h-32 sm:w-44 sm:h-44 lg:w-52 lg:h-52 rounded-full overflow-hidden border-4 sm:border-[6px] border-red-600 shadow-xl p-1 bg-white mb-4 sm:mb-6 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-[0_20px_40px_-15px_rgba(220,38,38,0.4)] relative">
+                    <div className="w-full h-full rounded-full overflow-hidden relative">
+                      <div className="absolute inset-0 bg-slate-900/10 z-10 group-hover:bg-transparent transition-colors"></div>
+                      <img 
+                        src={service.img} 
+                        alt={service.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                    </div>
                   </div>
-                </div>
-                
-                <h3 className="text-center font-bold text-red-600 tracking-wide text-sm sm:text-base lg:text-lg">
-                  {service.title.split(' ').map((word, i) => (
-                    <span key={i} className="block leading-tight">{word}</span>
-                  ))}
-                </h3>
+                  
+                  <h3 className="text-center font-bold text-red-600 tracking-wide text-sm sm:text-base lg:text-lg">
+                    {service.title.split(' ').map((word, i) => (
+                      <span key={i} className="block leading-tight">{word}</span>
+                    ))}
+                  </h3>
+                </Link>
               </motion.div>
             ))}
           </div>

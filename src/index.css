@@ -6,9 +6,15 @@
   --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
   --animate-dash: dash 40s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
   
   @keyframes dash {
     to { stroke-dashoffset: -1000; }
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
   }
 }
 
