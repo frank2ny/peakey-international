@@ -55,6 +55,7 @@ export function FeaturedOrganization() {
                 <img
                   src={leader.image}
                   alt={leader.name}
+                  loading="lazy"
                   className="w-full h-full object-cover object-[center_top] transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
@@ -131,7 +132,7 @@ export function FeaturedOrganization() {
           className="mt-10 text-center"
         >
           <p className="text-slate-400 text-sm font-light">
-            And <span className="font-bold text-slate-600">2 more</span> senior technical directors with 25+ years of combined expertise.
+            And <span className="font-bold text-slate-600">5 more</span> senior technical directors, specialists & associates.
           </p>
           <Link
             to="/organization"

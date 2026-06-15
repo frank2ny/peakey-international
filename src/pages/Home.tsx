@@ -9,17 +9,22 @@ export function Home() {
 
   const slides = [
     {
-      img: "/hero1.jpg",
+      img: "/hs.jpeg",
       title: "Active Constructions",
       subtitle: "Transforming the construction industry with monumental structural engineering solutions."
     },
     {
-      img: "/hero2.jpg",
+      img: "/hs22.jpeg",
       title: "Industrial & Mechanical",
       subtitle: "Advanced electro-mechanical engineering supporting factories and complex operations."
     },
     {
-      img: "/hero3.jpg",
+      img: "/hs33.jpeg",
+      title: "Government & Corporate",
+      subtitle: "Delivering secure, sustainable architectural designs for public and official institutions."
+    },
+    {
+      img: "/hs44.jpeg",
       title: "Government & Corporate",
       subtitle: "Delivering secure, sustainable architectural designs for public and official institutions."
     }
@@ -116,13 +121,13 @@ export function Home() {
               <div className="w-16 h-16 bg-white rounded-2xl shadow-xl shadow-slate-200/50 mb-4 flex items-center justify-center border border-slate-100 group-hover:-translate-y-1 group-hover:shadow-red-900/10 transition-all">
                 <span className="text-2xl font-black text-red-600">50+</span>
               </div>
-              <p className="text-[10px] uppercase tracking-widest font-black text-slate-500">Global Projects</p>
+              <p className="text-[10px] uppercase tracking-widest font-black text-slate-500">Our Projects</p>
             </div>
             <div className="text-center px-4 flex flex-col items-center group">
               <div className="w-16 h-16 bg-white rounded-2xl shadow-xl shadow-slate-200/50 mb-4 flex items-center justify-center border border-slate-100 group-hover:-translate-y-1 group-hover:shadow-red-900/10 transition-all text-xs font-black text-red-600">
                 AQRB
               </div>
-              <p className="text-[10px] uppercase tracking-widest font-black text-slate-500">Certified</p>
+              <p className="text-[10px] uppercase tracking-widest font-black text-slate-500">Registered</p>
             </div>
             <div className="text-center px-4 flex flex-col items-center group">
               <div className="w-16 h-16 bg-white rounded-2xl shadow-xl shadow-slate-200/50 mb-4 flex items-center justify-center border border-slate-100 group-hover:-translate-y-1 group-hover:shadow-red-900/10 transition-all text-xs font-black text-red-600">

@@ -118,6 +118,7 @@ export function Navbar() {
     const isProjectsLink = link.path === '#projects';
     const isServicesLink = link.path === '#services';
     const isOrganizationLink = link.path === '#organization';
+    const isBlogLink = link.path === '#blog';
     const isActive = activeHash === link.path;
     const underline = (
       <span className={`absolute left-0 bottom-0 w-full h-[2px] bg-red-600 transition-transform duration-300 ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
@@ -213,6 +214,22 @@ export function Navbar() {
           to="/projects"
           onClick={() => {
             setActiveHash('#projects');
+          }}
+          className={className}
+        >
+          {link.label}
+          {underline}
+        </Link>
+      );
+    }
+
+    if (isBlogLink) {
+      return (
+        <Link
+          key={link.path}
+          to="/blog"
+          onClick={() => {
+            setActiveHash('#blog');
           }}
           className={className}
         >
@@ -363,6 +380,21 @@ export function Navbar() {
           key={link.path}
         >
           <Link to="/projects" onClick={onClick} className={className}>
+            {content}
+          </Link>
+        </motion.div>
+      );
+    }
+
+    if (isBlogLink) {
+      return (
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.05 + idx * 0.05, duration: 0.3, ease: 'easeOut' }}
+          key={link.path}
+        >
+          <Link to="/blog" onClick={onClick} className={className}>
             {content}
           </Link>
         </motion.div>

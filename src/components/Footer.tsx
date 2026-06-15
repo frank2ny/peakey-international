@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Linkedin, Twitter, Instagram, ShieldCheck, Award, MapPin, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const { t } = useTranslation();
@@ -13,7 +14,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] relative z-10">
         <div className="grid gap-12 lg:grid-cols-12 mb-16">
           <div className="lg:col-span-5 lg:border-r border-slate-800/80 lg:pr-8">
-            <a href="#home" className="flex items-center gap-3 mb-6 transition-opacity hover:opacity-80">
+            <Link to="/#home" className="flex items-center gap-3 mb-6 transition-opacity hover:opacity-80">
               <img src="\PK.png" alt="Peakey International Logo" className="h-12 w-auto brightness-0 invert opacity-100 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
               <div className="flex flex-col">
                 <span className="text-xl font-black tracking-tight text-white leading-none">
@@ -21,7 +22,7 @@ export function Footer() {
                 </span>
                 <span className="text-[9px] font-bold tracking-[0.2em] text-red-500 uppercase mt-1">International Group</span>
               </div>
-            </a>
+            </Link>
             <p className="text-sm text-slate-400 leading-relaxed pr-4 mb-8 max-w-sm">
               {t('footer.description')}
             </p>
@@ -63,9 +64,10 @@ export function Footer() {
               <span className="w-2 h-2 rounded-full bg-red-600"></span> {t('footer.company')}
             </h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><a href="#about" className="hover:text-red-400 transition-colors">{t('nav.about')}</a></li>
-              <li><a href="#organization" className="hover:text-red-400 transition-colors">{t('nav.organization')}</a></li>
-              <li><a href="#partners" className="hover:text-red-400 transition-colors">{t('nav.partners')}</a></li>
+              <li><Link to="/#about" className="hover:text-red-400 transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to="/organization" className="hover:text-red-400 transition-colors">{t('nav.organization')}</Link></li>
+              <li><Link to="/#partners" className="hover:text-red-400 transition-colors">{t('nav.partners')}</Link></li>
+              <li><Link to="/blog" className="hover:text-red-400 transition-colors">{t('nav.blog')}</Link></li>
             </ul>
           </div>
 
@@ -74,9 +76,8 @@ export function Footer() {
               <span className="w-2 h-2 rounded-full bg-red-600"></span> {t('footer.work')}
             </h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li><a href="#services" className="hover:text-red-400 transition-colors">{t('nav.services')}</a></li>
-              <li><a href="#projects" className="hover:text-red-400 transition-colors">{t('nav.projects')}</a></li>
-              <li><a href="#sustainability" className="hover:text-red-400 transition-colors">{t('nav.sustainability')}</a></li>
+              <li><Link to="/services" className="hover:text-red-400 transition-colors">{t('nav.services')}</Link></li>
+              <li><Link to="/projects" className="hover:text-red-400 transition-colors">{t('nav.projects')}</Link></li>
             </ul>
           </div>
 

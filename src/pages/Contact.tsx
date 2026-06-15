@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PageHeader } from '../components/PageHeader';
 import { motion } from 'motion/react';
 import { Send, CheckCircle, MapPin, Phone, Mail } from 'lucide-react';
 
@@ -42,7 +41,19 @@ export function Contact() {
 
   return (
     <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10">
-      <PageHeader title={t('contact.title')} subtitle="We would love to hear from you." />
+      <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12 pt-24 pb-8 w-full">
+        <div className="text-center">
+          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+            Connect
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
+            {t('contact.title')}
+          </h2>
+          <p className="text-slate-500 mt-4 font-light max-w-2xl mx-auto text-base sm:text-lg">
+            We would love to hear from you.
+          </p>
+        </div>
+      </div>
       
       <div className="mx-auto max-w-[1280px] w-full px-6 py-12 sm:px-12 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">

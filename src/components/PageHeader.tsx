@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
 interface PageHeaderProps {
-  title: string;
+  title?: string;
   subtitle?: string;
 }
 
@@ -15,9 +15,11 @@ export function PageHeader({ title, subtitle }: PageHeaderProps) {
         transition={{ duration: 0.5 }}
         className="flex flex-col border-l-4 border-red-600 pl-6"
       >
-        <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-slate-900 mb-4">
-          {title}
-        </h2>
+        {title && (
+          <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-slate-900 mb-4">
+            {title}
+          </h2>
+        )}
         {subtitle && (
           <p className="text-lg lg:text-xl text-slate-500 max-w-2xl font-light">
             {subtitle}

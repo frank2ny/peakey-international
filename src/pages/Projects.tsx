@@ -10,10 +10,10 @@ function GlobalMap() {
   const hq = { x: 50, y: 55, name: 'African Headquarters (Dar Es Salaam)', role: 'Core Operations Hub' };
 
   const branches = [
-    { x: 20, y: 35, name: 'North America', role: 'Strategic Partners' },
-    { x: 25, y: 70, name: 'South America', role: 'Engineering Operations' },
-    { x: 45, y: 30, name: 'Europe', role: 'Consulting Affiliates' },
-    { x: 75, y: 40, name: 'Asia', role: 'Supply Chain Operations' },
+    { x: 20, y: 35, name: 'North America', role: 'Supply Chain' },
+    { x: 25, y: 70, name: 'South America', role: 'Supply Chain' },
+    { x: 45, y: 30, name: 'Europe', role: 'Supply Chain' },
+    { x: 75, y: 40, name: 'Asia', role: 'Consulting Affiliates' },
     { x: 85, y: 75, name: 'Oceania', role: 'Regional Projects' },
   ];
 
@@ -109,7 +109,7 @@ function GlobalMap() {
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
         {[
           { label: 'Countries Active', value: '45+' },
           { label: 'Global Workforce', value: '850+' },
@@ -121,7 +121,7 @@ function GlobalMap() {
             <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500">{stat.label}</span>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -129,7 +129,7 @@ function GlobalMap() {
 export function Projects() {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [selectedStatus, setSelectedStatus] = useState('All');
   const [sortBy, setSortBy] = useState('value-desc');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -153,7 +153,10 @@ export function Projects() {
         p.client.toLowerCase().includes(searchQuery.toLowerCase()) ||
         p.location.toLowerCase().includes(searchQuery.toLowerCase());
       
-      const matchesCategory = selectedCategory === 'All' || p.category === selectedCategory;
+      const matchesCategory = selectedCategory === 'ALL' || 
+        (selectedCategory === 'GOVERMENT' && p.category === 'Government') ||
+        (selectedCategory === 'COMMERSIAL' && p.category === 'Commercial') ||
+        (selectedCategory === 'RESIDENTIAL' && p.category === 'Residential');
       const matchesStatus = selectedStatus === 'All' || p.status === selectedStatus;
 
       return matchesSearch && matchesCategory && matchesStatus;
@@ -174,11 +177,11 @@ export function Projects() {
       return 0;
     });
 
-  const categories = ['All', 'Government', 'Commercial', 'Infrastructure', 'Residential'];
+  const categories = ['ALL', 'GOVERMENT', 'COMMERSIAL', 'RESIDENTIAL'];
 
   return (
     <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10 overflow-hidden min-h-screen">
-      <PageHeader title={t('projects.dashboardTitle')} subtitle={t('projects.dashboardSubtitle')} />
+      <PageHeader subtitle={t('projects.dashboardSubtitle')} />
 
       <div className="max-w-[1280px] mx-auto w-full px-6 sm:px-12 pb-24">
         
@@ -246,9 +249,14 @@ export function Projects() {
               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('projects.categoryLabel')}</span>
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => {
-                  const count = cat === 'All' 
+                  const count = cat === 'ALL' 
                     ? projectsData.length 
-                    : projectsData.filter(p => p.category === cat).length;
+                    : projectsData.filter(p => {
+                        if (cat === 'GOVERMENT') return p.category === 'Government';
+                        if (cat === 'COMMERSIAL') return p.category === 'Commercial';
+                        if (cat === 'RESIDENTIAL') return p.category === 'Residential';
+                        return false;
+                      }).length;
 
                   return (
                     <button
@@ -371,11 +379,7 @@ export function Projects() {
                     </div>
                   </div>
 
-                  <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
-                    <div>
-                      <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-0.5">{t('projects.value')}</p>
-                      <p className="text-sm font-black text-slate-950">{project.value}</p>
-                    </div>
+                  <div className="pt-5 border-t border-slate-100 flex items-center justify-end">
                     <span className="text-[10px] font-black text-red-600 group-hover:translate-x-1.5 transition-transform duration-300 flex items-center gap-1 uppercase tracking-wider">
                       Details &rarr;
                     </span>
@@ -506,21 +510,7 @@ export function Projects() {
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <DollarSign className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-0.5">{t('projects.value')}</p>
-                          <p className="text-sm font-black text-slate-900 leading-snug">{selectedProject.value}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3.5">
-                        <User className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-                        <div>
-                          <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-0.5">{t('projects.teamLead')}</p>
-                          <p className="text-sm font-black text-slate-900 leading-snug">{selectedProject.teamLead}</p>
-                        </div>
-                      </div>
+                      {/* Project value and team lead are hidden per request */}
 
                     </div>
 

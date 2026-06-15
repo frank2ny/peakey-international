@@ -48,6 +48,7 @@ export function FeaturedProjects() {
                 <img 
                   src={project.img} 
                   alt={project.title} 
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute top-4 right-4 z-20">

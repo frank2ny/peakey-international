@@ -50,7 +50,7 @@ export function PartnersMarquee() {
 
         <div
           ref={trackRef}
-          className="flex items-center gap-6 sm:gap-10 animate-[marquee_30s_linear_infinite] w-max hover:[animation-play-state:paused]"
+          className="flex items-center gap-6 sm:gap-10 animate-marquee w-max hover:[animation-play-state:paused]"
         >
           {scrollList.map((partner, idx) => (
             <div

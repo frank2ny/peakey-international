@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { PageHeader } from '../components/PageHeader';
 import { motion } from 'motion/react';
 import { Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,12 +10,12 @@ export function Services() {
     {
       id: "project-management",
       title: "Project Management",
-      img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=600"
+      img: "/overview.jpg"
     },
     {
       id: "contract-management",
       title: "Contract Management",
-      img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=600"
+      img: "/cn.jpg"
     },
     {
       id: "architectural",
@@ -36,7 +35,7 @@ export function Services() {
     {
       id: "mechanical-engineering",
       title: "Mechanical Engineering",
-      img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+      img: "/me.jpg"
     },
     {
       id: "ict-engineering",
@@ -47,7 +46,19 @@ export function Services() {
 
   return (
     <div className="flex flex-col w-full relative z-10 border-b border-slate-200 bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100))]">
-      <PageHeader title={t('nav.services')} subtitle="Transforming the construction and consultancy industry with comprehensive expertise." />
+      <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12 pt-24 pb-8 w-full">
+        <div className="text-center">
+          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+            Our Expertise
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
+            {t('nav.services')}
+          </h2>
+          <p className="text-slate-500 mt-4 font-light max-w-2xl mx-auto text-base sm:text-lg">
+            Transforming the construction and consultancy industry with comprehensive expertise.
+          </p>
+        </div>
+      </div>
       
       <div className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-50 via-slate-100 to-slate-200/80 px-6 sm:px-12 py-16 pb-32">
         <div className="max-w-[1200px] mx-auto flex flex-col items-center">

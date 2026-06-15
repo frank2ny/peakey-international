@@ -20,9 +20,10 @@ const FeaturedProjects = React.lazy(() => import('./components/FeaturedProjects'
 const ServicesDetailed = React.lazy(() => import('./pages/ServicesDetailed').then(module => ({ default: module.ServicesDetailed })));
 const Placeholder = React.lazy(() => import('./pages/Placeholder').then(module => ({ default: module.Placeholder })));
 const PartnersMarquee = React.lazy(() => import('./components/PartnersMarquee').then(module => ({ default: module.PartnersMarquee })));
+const NotFound = React.lazy(() => import('./pages/NotFound').then(module => ({ default: module.NotFound })));
 
 // Sub-pages that show the branded loader (not the home page)
-const SUB_PAGES = ['/projects', '/services', '/organization'];
+const SUB_PAGES = ['/projects', '/services', '/organization', '/blog'];
 
 function ScrollToHash() {
   const { hash, pathname } = useLocation();
@@ -40,8 +41,8 @@ function ScrollToHash() {
         }, 350);
         return () => clearTimeout(timer);
       }
-    } else if (pathname === '/') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }, [hash, pathname]);
 
@@ -52,26 +53,29 @@ function ScrollToHash() {
 function SubPageSuspense({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const isSubPage = SUB_PAGES.includes(location.pathname);
-  const [isLoading, setIsLoading] = useState(isSubPage);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // When pathname changes to a sub-page, briefly show the loader
+  // When pathname changes, briefly show the loader
   useEffect(() => {
-    if (isSubPage) {
-      setIsLoading(true);
-      // Minimum display so it's visible, then defer hiding to Suspense resolution
-      const t = setTimeout(() => setIsLoading(false), 600);
-      return () => clearTimeout(t);
-    } else {
-      setIsLoading(false);
-    }
+    setIsLoading(true);
+    const delay = isSubPage ? 600 : 400; // brief loader display on initial or route switch
+    const t = setTimeout(() => setIsLoading(false), delay);
+    return () => clearTimeout(t);
   }, [location.pathname, isSubPage]);
+
+  // Ensure viewports start at the top after a subpage has loaded
+  useEffect(() => {
+    if (!isLoading && isSubPage && !location.hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }, [isLoading, isSubPage, location.hash]);
 
   return (
     <>
       <AnimatePresence mode="wait">
         {isLoading && <PageLoader key="page-loader" />}
       </AnimatePresence>
-      <Suspense fallback={isSubPage ? <PageLoader /> : null}>
+      <Suspense fallback={<PageLoader />}>
         {children}
       </Suspense>
     </>
@@ -100,17 +104,15 @@ export default function App() {
         <SubPageSuspense>
           <Routes>
             <Route path="/" element={
-              <Suspense fallback={null}>
+              <Suspense fallback={<PageLoader />}>
                 <>
                   <div id="home"><Home /></div>
                   <div id="about"><About /></div>
                   <div id="organization"><FeaturedOrganization /></div>
                   <div id="services"><Services /></div>
                   <div id="projects"><FeaturedProjects /></div>
-                  <div id="sustainability"><Placeholder title={t('nav.sustainability')} subtitle="Our commitment to eco-friendly practices." /></div>
                   <div id="partners"><PartnersMarquee /></div>
                   <div id="gallery"><Placeholder title={t('nav.gallery')} subtitle="Visual highlights of our global operations." /></div>
-                  <div id="blog"><Blog /></div>
                   <div id="contact"><Contact /></div>
                 </>
               </Suspense>
@@ -118,6 +120,8 @@ export default function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/services" element={<ServicesDetailed />} />
             <Route path="/organization" element={<Organization />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </SubPageSuspense>
       </main>

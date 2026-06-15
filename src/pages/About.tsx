@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { PageHeader } from '../components/PageHeader';
 import { motion } from 'motion/react';
 import { Target, Lightbulb, HeartHandshake, ShieldCheck, Flame, BarChart } from 'lucide-react';
 
@@ -16,7 +15,19 @@ export function About() {
 
   return (
     <div className="flex flex-col w-full relative z-10 bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))]">
-      <PageHeader title={t('nav.about')} subtitle="Discover our vision, mission, and the core competencies that define us." />
+      <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12 pt-24 pb-8 w-full">
+        <div className="text-center">
+          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+            Who We Are
+          </div>
+          <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
+            {t('nav.about')}
+          </h2>
+          <p className="text-slate-500 mt-4 font-light max-w-2xl mx-auto text-base sm:text-lg">
+            Discover our vision, mission, and the core competencies that define us.
+          </p>
+        </div>
+      </div>
       
       <div className="max-w-[1280px] mx-auto w-full px-6 sm:px-12 py-12 border-b border-slate-200/60">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-24">
@@ -43,12 +54,14 @@ export function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeIn" }}
             className="relative"
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-red-700 to-red-500 rounded-3xl blur-2xl opacity-30 transform translate-y-8 translate-x-8"></div>
             <img 
-              src="/overview.jpg" 
+              src="/about.jpg" 
               alt="Peakey International Team Meeting" 
+              loading="lazy"
               className="relative w-full h-auto aspect-square lg:aspect-[4/3] object-cover rounded-3xl shadow-lg border border-white transition-all duration-500 hover:shadow-2xl hover:shadow-slate-400/50 hover:-translate-y-2"
             />
             
