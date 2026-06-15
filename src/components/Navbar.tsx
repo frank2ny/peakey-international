@@ -274,6 +274,7 @@ export function Navbar() {
     const isProjectsLink = link.path === '#projects';
     const isServicesLink = link.path === '#services';
     const isOrganizationLink = link.path === '#organization';
+    const isBlogLink = link.path === '#blog';
     const isActive = activeHash === link.path;
     const content = (
       <>

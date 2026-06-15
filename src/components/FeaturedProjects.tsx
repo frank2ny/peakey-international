@@ -98,15 +98,7 @@ export function FeaturedProjects() {
                 </div>
 
                 {/* Card Footer */}
-                <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
-                  <div>
-                    <p className="text-[9px] uppercase font-bold text-slate-400 tracking-wider mb-0.5">
-                      {t('projects.value')}
-                    </p>
-                    <p className="text-sm font-black text-slate-950">
-                      {project.value}
-                    </p>
-                  </div>
+                <div className="pt-5 border-t border-slate-100 flex items-center justify-end">
                   <Link
                     to="/projects"
                     className="flex items-center justify-center w-9 h-9 rounded-full bg-slate-50 text-slate-500 group-hover:bg-red-600 group-hover:text-white transition-all duration-300 shadow-sm"
