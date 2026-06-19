@@ -12,7 +12,7 @@ export function Navbar() {
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [mobileServicesExpanded, setMobileServicesExpanded] = useState(false);
   const dropdownTimeoutRef = useRef<number | null>(null);
-  
+
   const location = useLocation();
   const isProjectsPage = location.pathname === '/projects';
   const isServicesPage = location.pathname === '/services';
@@ -78,18 +78,17 @@ export function Navbar() {
     { path: '#organization', label: t('nav.organization') },
     { path: '#services', label: t('nav.services'), hasDropdown: true },
     { path: '#projects', label: t('nav.projects') },
-    { path: '#blog', label: t('nav.blog') },
     { path: '#contact', label: t('nav.contact') },
   ];
 
   const subServices = [
     { id: 'project-management', key: 'projectManagement' },
+    { id: 'contract-management', key: 'contractManagement' },
     { id: 'architectural', key: 'architectural' },
     { id: 'quantity-surveying', key: 'quantitySurveying' },
-    { id: 'ict-engineering', key: 'ictEngineering' },
-    { id: 'electrical-engineering', key: 'electricalEngineering' },
     { id: 'mechanical-engineering', key: 'mechanicalEngineering' },
-    { id: 'contract-management', key: 'contractManagement' },
+    { id: 'electrical-engineering', key: 'electricalEngineering' },
+    { id: 'ict-engineering', key: 'ictEngineering' },
   ];
 
   const handleMouseEnter = () => {
@@ -126,7 +125,7 @@ export function Navbar() {
 
     if (isServicesLink) {
       return (
-        <div 
+        <div
           key={link.path}
           className="relative"
           onMouseEnter={handleMouseEnter}
@@ -278,22 +277,19 @@ export function Navbar() {
     const isActive = activeHash === link.path;
     const content = (
       <>
-        <span className={`text-[12px] sm:text-[13px] uppercase tracking-[0.15em] transition-colors ${
-          isActive ? 'text-red-600 font-black' : 'text-slate-500 font-bold group-hover:text-slate-900'
-        }`}>
+        <span className={`text-[12px] sm:text-[13px] uppercase tracking-[0.15em] transition-colors ${isActive ? 'text-red-600 font-black' : 'text-slate-500 font-bold group-hover:text-slate-900'
+          }`}>
           {link.label}
         </span>
         {!isServicesLink && (
-          <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-            isActive ? 'bg-red-600 scale-100' : 'bg-transparent scale-0 group-hover:scale-100 group-hover:bg-slate-300'
-          }`}></div>
+          <div className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${isActive ? 'bg-red-600 scale-100' : 'bg-transparent scale-0 group-hover:scale-100 group-hover:bg-slate-300'
+            }`}></div>
         )}
       </>
     );
 
-    const className = `group flex items-center justify-between w-full py-3 transition-all outline-none ${
-      isActive ? 'px-4 bg-slate-50 rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]' : 'px-4 hover:bg-slate-50 hover:rounded-lg'
-    }`;
+    const className = `group flex items-center justify-between w-full py-3 transition-all outline-none ${isActive ? 'px-4 bg-slate-50 rounded-lg shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]' : 'px-4 hover:bg-slate-50 hover:rounded-lg'
+      }`;
 
     if (isServicesLink) {
       return (
@@ -433,9 +429,8 @@ export function Navbar() {
   };
 
   return (
-    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-      scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg py-2' : 'bg-white py-3 shadow-sm'
-    }`}>
+    <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg py-2' : 'bg-white py-3 shadow-sm'
+      }`}>
       <div className="mx-auto flex items-center justify-between max-w-[1280px] px-4 sm:px-12">
         {isProjectsPage || isServicesPage || isOrganizationPage ? (
           <Link
@@ -475,37 +470,10 @@ export function Navbar() {
             {navLinks.map((link) =>
               renderNavLink(
                 link,
-                `relative transition-all py-1 whitespace-nowrap overflow-hidden group ${
-                  activeHash === link.path ? 'text-red-700' : 'hover:text-red-600'
+                `relative transition-all py-1 whitespace-nowrap overflow-hidden group ${activeHash === link.path ? 'text-red-700' : 'hover:text-red-600'
                 }`
               )
             )}
-          </div>
-          
-          <div className="h-4 w-px bg-slate-300 mx-2"></div>
-          
-          <div className="relative flex items-center bg-slate-200/50 rounded-full p-1 cursor-pointer">
-             <div 
-                className={`absolute inset-y-1 w-[32px] bg-white rounded-full shadow-sm transition-transform duration-300 ease-out ${
-                  i18n.language.startsWith('sw') ? 'translate-x-[32px]' : 'translate-x-0'
-                }`}
-             ></div>
-             <button 
-               onClick={() => changeLanguage('en')} 
-               className={`relative z-10 w-[32px] py-1 text-[10px] font-black transition-colors ${
-                 i18n.language.startsWith('en') ? 'text-red-700' : 'text-slate-500 hover:text-slate-700'
-               }`}
-             >
-               EN
-             </button>
-             <button 
-               onClick={() => changeLanguage('sw')} 
-               className={`relative z-10 w-[32px] py-1 text-[10px] font-black transition-colors ${
-                 i18n.language.startsWith('sw') ? 'text-red-700' : 'text-slate-500 hover:text-slate-700'
-               }`}
-             >
-               SW
-             </button>
           </div>
         </nav>
 
@@ -538,37 +506,6 @@ export function Navbar() {
                   setActiveHash(link.path);
                 })
               )}
-              
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-                className="mt-auto pt-4 pb-4 border-t border-slate-50"
-              >
-                <div className="relative flex items-center bg-slate-50 border border-slate-100 rounded-full p-1.5 max-w-[160px] mx-auto shadow-inner">
-                   <div 
-                     className={`absolute inset-y-1.5 w-[calc(50%-6px)] bg-white rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.06)] transition-transform duration-300 ease-out ${
-                       i18n.language.startsWith('sw') ? 'translate-x-[100%]' : 'translate-x-0'
-                     }`}
-                   ></div>
-                   <button 
-                     onClick={() => { changeLanguage('en'); setIsOpen(false); }} 
-                     className={`relative z-10 flex-1 py-1.5 text-[10px] sm:text-[11px] font-black tracking-[0.15em] transition-colors uppercase ${
-                       i18n.language.startsWith('en') ? 'text-red-700' : 'text-slate-400 hover:text-slate-700'
-                     }`}
-                   >
-                     English
-                   </button>
-                   <button 
-                     onClick={() => { changeLanguage('sw'); setIsOpen(false); }} 
-                     className={`relative z-10 flex-1 py-1.5 text-[10px] sm:text-[11px] font-black tracking-[0.15em] transition-colors uppercase ${
-                       i18n.language.startsWith('sw') ? 'text-red-700' : 'text-slate-400 hover:text-slate-700'
-                     }`}
-                   >
-                     Swahili
-                   </button>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         )}

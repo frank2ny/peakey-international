@@ -1,6 +1,6 @@
 export interface Project {
   title: string;
-  category: 'Government' | 'Commercial' | 'Infrastructure' | 'Residential';
+  category: 'Government' | 'Commercial' | 'Industrial' | 'Residential';
   client: string;
   location: string;
   status: 'ONGOING' | 'COMPLETED';
@@ -14,122 +14,131 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: "TANESCO Head Office",
+    title: "African Court of Human and Peoples' Rights - Arusha, Tanzania",
     category: "Government",
-    client: "TANESCO / NOSUTO ASSOCIATES",
-    location: "Ihumwa Government City, Dodoma",
+    client: "MINISTRY OF FOREIGN AFFAIRS",
+    location: "Arusha, Tanzania",
     status: "ONGOING",
-    img: "/Tanesco.jpg",
-    value: "TZS 4,920,350,000",
-    description: "Flagship energy authority headquarters. Features high architectural symmetry, thermal insulated facade walls, and wide open-plan executive chambers designed to support state-of-the-art administrative functions.",
+    img: "/hero1.jpg",
+    value: "USD 62,968,086,187.78",
+    description: "Proposed Construction Of Buildings For The Permanent Seat Of The African Court Of Human And Peoples' Rights",
     teamLead: "Eng. Peter John Mwamaso",
     year: "2024 - Present",
     highlights: [
-      "Large span composite floor trusses",
-      "Thermal mass insulation building skin",
-      "Integrated electrical substation foundation"
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
     ]
   },
   {
-    title: "Renovation of NSSF Benjamini William Mkapa Pension Towers",
+    title: "Multi-Storey Investment Building – Nairobi, Kenya",
     category: "Commercial",
-    client: "NATIONAL SOCIAL SECURITY FUND (NSSF)",
-    location: "Dar es Salaam",
+    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
+    location: "Nairobi, Kenya",
     status: "ONGOING",
-    img: "/Nssf.jpg",
-    value: "Confidential",
-    description: "Comprehensive structural retrofitting, interior load reorganization, and external glass-curtain wall modernization of the Benjamini William Mkapa Pension Towers to support modern commercial activities in Dar es Salaam's central business district.",
+    img: "/hero2.jpg",
+    value: "USD 38,461,538.46",
+    description: "Proposed Construction of Multi-Storey Investment Building for Tanzania Embassy in Nairobi, Kenya.",
     teamLead: "QS. Dr. Mhenga Agneta",
     year: "2024 - Present",
     highlights: [
-      "Structural integrity inspection and reinforcement scanning",
-      "Exterior facade structural framing installation",
-      "High-stress load redistribution planning"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "ICT Service Center (ISC) – NIDA Kibaha",
-    category: "Infrastructure",
+    title: "Regional Registration Offices - RRO I & II in Tanzania",
+    category: "Government",
     client: "NIDA / CIP INTERNATIONAL",
-    location: "Kibaha, Coastal Region",
+    location: "Tanzania (Multiple Sites)",
     status: "ONGOING",
     img: "/NIDA.jpeg",
-    value: "USD 3,868,245.50",
-    description: "Engineering consultation and structural design for the National Identification Authority's main ICT service node. Focuses on heavy floor load capacities for server units, backup power room safety, and robust security walls.",
+    value: "USD 29,469,806.40",
+    description: "Provision of Consultancy Services for National ID System Expansion Project Phase in Tanzania in These Two Projects Located at Different Locations Within Tanzania. Regional Registration Office: RRO-Type I: (Single Storey-6 Sites) Regional Regis Tration Office: RRO-Type II (Double Storey- 24 Sites) and RRO Type III (Three Storey- 1 Site)",
+    teamLead: "Eng. Peter John Mwamaso",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Apartment Building & Ambassador's Residence – Burundi",
+    category: "Government",
+    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
+    location: "Bujumbura, Burundi",
+    status: "ONGOING",
+    img: "/hero3.jpg",
+    value: "USD 25,000,000",
+    description: "Proposed Construction of Multi-Storey Apartment Building and Ambassador’s Residence for Tanzania Embassy in Burundi.",
     teamLead: "Arch. Dorothea Gervas",
     year: "2024 - Present",
     highlights: [
-      "High-load-bearing structural slab engineering",
-      "Integration of specialized HVAC cable paths",
-      "Secure perimeter structural protection design"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "Chancery Building & Ambassador's Residence",
+    title: "Office for Registrar of Political Parties - Dodoma, Tanzania",
+    category: "Government",
+    client: "OFFICE OF THE REGISTRAR OF POLITICAL PARTIES",
+    location: "Mlimani Area, Dodoma, Tanzania",
+    status: "ONGOING",
+    img: "/Tanesco.jpg",
+    value: "USD 25,000,000",
+    description: "Proposed Construction of Office for Registrar of Political Parties to be Built at Mlimani Area, Dodoma.",
+    teamLead: "QS. Dr. Mhenga Agneta",
+    year: "2024 - Present",
+    highlights: [
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
+    ]
+  },
+  {
+    title: "Multi-Storey Apartment Building – Malawi",
+    category: "Government",
+    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
+    location: "Lilongwe, Malawi",
+    status: "ONGOING",
+    img: "/hero1.jpg",
+    value: "USD 25,000,000",
+    description: "Proposed Construction of Multi-Storey Apartment Building for Tanzania Embassy in Malawi",
+    teamLead: "Eng. Peter John Mwamaso",
+    year: "2024 - Present",
+    highlights: [
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
+    ]
+  },
+  {
+    title: "Chancery Building & Ambassador's Residence - Kigali Rwanda",
     category: "Government",
     client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
     location: "Kigali, Rwanda",
     status: "ONGOING",
     img: "/Rwanda.jpg",
     value: "USD 23,846,153.85",
-    description: "Designing the new chancery building and ambassador's private residence in Kigali. Styled with unique architectural aesthetics representing Tanzanian heritage while utilizing local materials and advanced terrain terracing.",
+    description: "Proposed Construction of Multi-Storey Chancery Building and Ambassador's Residence for Tanzania Embassy in Kigali, Rwanda",
     teamLead: "Eng. Peter John Mwamaso",
     year: "2023 - Present",
     highlights: [
-      "Diplomatic-grade security boundary wall structures",
-      "Terraced foundation design for Rwanda's hilly landscape",
-      "Integrated natural cooling ventilation pathways"
-    ]
-  },
-  {
-    title: "Multi-Storey Investment Building – Moroni",
-    category: "Government",
-    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
-    location: "Moroni, Comoro",
-    status: "ONGOING",
-    img: "/hero1.jpg",
-    value: "USD 17,307,692.31",
-    description: "A multi-storey commercial and investment property designed to support Tanzania's diplomatic assets in Comoro. Engineered to withstand maritime conditions, featuring high-durability concrete and energy-efficient building systems.",
-    teamLead: "Eng. Peter John Mwamaso",
-    year: "2023 - Present",
-    highlights: [
-      "Corrosion-resistant concrete reinforcement detailing",
-      "Large span retail and office floor layout design",
-      "Solar grid integration structural support"
-    ]
-  },
-  {
-    title: "Multi-Storey Investment Building – Nairobi",
-    category: "Government",
-    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
-    location: "Nairobi, Kenya",
-    status: "ONGOING",
-    img: "/hero2.jpg",
-    value: "USD 38,461,538.46",
-    description: "A flagship commercial investment tower for the Tanzania High Commission in Nairobi. Includes luxury office spaces, conference centers, and high-end security amenities in Nairobi's commercial zone.",
-    teamLead: "QS. Dr. Mhenga Agneta",
-    year: "2024 - Present",
-    highlights: [
-      "Seismic-resistant frame designs to Kenyan building codes",
-      "Multi-level underground parking structural excavation",
-      "Green-star energy building certification compliance"
-    ]
-  },
-  {
-    title: "Apartment Building & Ambassador's Residence – Burundi",
-    category: "Residential",
-    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
-    location: "Bujumbura, Burundi",
-    status: "ONGOING",
-    img: "/hero3.jpg",
-    value: "USD 25,000,000",
-    description: "Residential complex consisting of multiple staff apartment suites and the primary residence of the Tanzanian Ambassador. Features sustainable local landscaping, reinforced foundation pads, and high-security access gates.",
-    teamLead: "Arch. Dorothea Gervas",
-    year: "2024 - Present",
-    highlights: [
-      "Diplomatic security zone planning",
-      "Reinforced frame design for residential units",
-      "Sustainable drainage and stormwater management systems"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
@@ -140,268 +149,369 @@ export const projectsData: Project[] = [
     status: "ONGOING",
     img: "/hero1.jpg",
     value: "USD 23,846,153.85",
-    description: "A large-scale project encompassing the official chancery, investment spaces, and the diplomat residence. Built along coastal Maputo, incorporating high wind-load engineering and advanced moisture insulation systems.",
+    description: "Proposed Construction of Chancery, Investment and Ambassador's Residence Building for Tanzania High Commission in Mozambique",
     teamLead: "Eng. Peter John Mwamaso",
     year: "2023 - Present",
     highlights: [
-      "High wind-resistant roof framing systems",
-      "Anti-saline concrete mixture formulation",
-      "Diplomatic security access checkpoints"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "Office for Registrar of Political Parties",
-    category: "Government",
-    client: "OFFICE OF THE REGISTRAR OF POLITICAL PARTIES",
-    location: "Mlimani, Dodoma",
-    status: "ONGOING",
-    img: "/Tanesco.jpg",
-    value: "USD 25,000,000",
-    description: "New administrative office block in Dodoma. Designed with classic government building proportions, modern office interior structures, and high energy efficiency for the scorching Dodoma climate.",
-    teamLead: "QS. Dr. Mhenga Agneta",
-    year: "2024 - Present",
-    highlights: [
-      "Passive cooling building shell engineering",
-      "Modern layout planning for political registries",
-      "Dodoma government city structural compliance"
-    ]
-  },
-  {
-    title: "Integrated Operations Center (IOC) – NIDA",
+    title: "Integrated Operations Center (IOC) – NIDA, Dodoma, Tanzania",
     category: "Government",
     client: "NIDA / CIP INTERNATIONAL",
-    location: "Dodoma",
+    location: "Dodoma, Tanzania",
     status: "ONGOING",
-    img: "/NIDA.jpeg",
+    img: "/WEBSITE DEVELOPMENT/ioc1.png",
     value: "USD 19,067,434.05",
-    description: "The command center for national identification data collection and security operations in Dodoma. Engineered for disaster resilience, server column storage, and 24/7 power supply continuity.",
+    description: "Proposed Integrated Operations Center (IOC) on Plot No. 9 Block 'D' NCC– Dodoma",
     teamLead: "Arch. Dorothea Gervas",
     year: "2024 - Present",
     highlights: [
-      "Blast-resistant foundation walls",
-      "Integrated underground bunker structure",
-      "Continuous power backup facility containment"
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
     ]
   },
   {
-    title: "National ID System Expansion",
-    category: "Infrastructure",
-    client: "NIDA / CIP INTERNATIONAL",
-    location: "Tanzania (Multiple Sites)",
-    status: "ONGOING",
-    img: "/NIDA.jpeg",
-    value: "USD 29,469,806.40",
-    description: "Civil works and structural adjustments across 31 regional NIDA offices (RRO Type I & II) nationwide. Focuses on upgrading regional server hubs, installing solar power frames, and organizing secure biometric registration zones.",
-    teamLead: "Eng. Peter John Mwamaso",
-    year: "2024 - Present",
-    highlights: [
-      "Distributed server room load reinforcements",
-      "Structural steel frames for large solar arrays",
-      "Rapid deployment modular building design"
-    ]
-  },
-  {
-    title: "Hostel & Multipurpose Building – BOT Academy",
+    title: "Multi-Storey Investment Building – Moroni, Comoro",
     category: "Government",
-    client: "BANK OF TANZANIA / NOSUTO ASSOCIATES",
-    location: "Mwanza",
-    status: "ONGOING",
-    img: "/hero2.jpg",
-    value: "TZS 4,657,582,765",
-    description: "Developing modern hostel accommodations and a multipurpose hall for the Bank of Tanzania (BOT) Academy. Focuses on large span structures, lake-shore soil dynamics, and aesthetic educational campus integration.",
-    teamLead: "QS. Dr. Mhenga Agneta",
-    year: "2024 - Present",
-    highlights: [
-      "High stability column foundation for lake-shore clay",
-      "Acoustically insulated multipurpose auditorium roof",
-      "Eco-friendly natural lighting designs"
-    ]
-  },
-  {
-    title: "Passenger Waiting Lounge – Dar es Salaam Port",
-    category: "Infrastructure",
-    client: "TANZANIA PORT AUTHORITY",
-    location: "Dar es Salaam Port",
-    status: "ONGOING",
-    img: "/hero3.jpg",
-    value: "TZS 14,000,000,000",
-    description: "A state-of-the-art transit hub for ferry and ship passengers at the Dar es Salaam Port. Engineered to support high foot traffic, featuring premium architectural detailing and sea-spray corrosion protection.",
-    teamLead: "QS. Dr. Mhenga Agneta",
-    year: "2025 - Present",
-    highlights: [
-      "Marine grade anti-corrosive structure coatings",
-      "High traffic flow open layout engineering",
-      "Energy efficient LED and HVAC pathways"
-    ]
-  },
-  {
-    title: "African Court of Human and Peoples' Rights",
-    category: "Government",
-    client: "MINISTRY OF FOREIGN AFFAIRS",
-    location: "Arusha",
+    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
+    location: "Moroni, Comoro",
     status: "ONGOING",
     img: "/hero1.jpg",
-    value: "USD 62,968,086,187.78",
-    description: "The new official headquarters of the continental African Court in Arusha. Built to house chambers, judicial records archives, and administrative halls with highest accessibility standards.",
+    value: "USD 17,307,692.31",
+    description: "Proposed Construction of Multi-Storey Investment Building For Tanzania Embassy in Moroni, Comoro",
     teamLead: "Eng. Peter John Mwamaso",
-    year: "2024 - Present",
+    year: "2023 - Present",
     highlights: [
-      "Grand court chamber large span ceiling trusses",
-      "High-security executive wings",
-      "Accessibility ramp and elevator structural framing"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "Multi-Storey Investment Building – Kinshasa",
+    title: "Multi-Storey Investment Building – Kinshasa, DRC",
     category: "Government",
     client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
     location: "Kinshasa, DR Congo",
     status: "ONGOING",
     img: "/hero2.jpg",
     value: "USD 15,384,615.38",
-    description: "Commercial and office investment complex supporting diplomatic efforts in DRC. Built to secure standards with high performance concrete frameworks.",
+    description: "Proposed Construction of Multi Storey Investment Building for Tanzania Embassy in Kinshasa, Congo.",
     teamLead: "Arch. Dorothea Gervas",
     year: "2023 - Present",
     highlights: [
-      "High-strength concrete framework",
-      "Advanced security access controls",
-      "Modular floor plans for commercial renting"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "Zanzibar Bus Terminal",
-    category: "Infrastructure",
-    client: "ZANZIBAR SOCIAL SECURITY FUND",
-    location: "Kijangwani, Zanzibar",
+    title: "Passenger Waiting Lounge – Dar es Salaam Port",
+    category: "Government",
+    client: "TANZANIA PORT AUTHORITY",
+    location: "Dar es Salaam Port",
     status: "ONGOING",
     img: "/hero3.jpg",
-    value: "TZS 2,500,000,000",
-    description: "Designing a high-capacity terminal for local bus routes. Features modular passenger boarding bays, heavy-duty bus lane road beds, and retail spaces.",
+    value: "TZS 14,000,000,000",
+    description: "Proposed Passenger Waiting Lounge to be Built at Dar es Salaam Port.",
     teamLead: "QS. Dr. Mhenga Agneta",
-    year: "2024 - Present",
+    year: "2025 - Present",
     highlights: [
-      "Heavy vehicle asphalt and slab design",
-      "Modular pedestrian boarding bay steel roofs",
-      "Integrated drainage system for heavy Zanzibar rain"
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
     ]
   },
   {
-    title: "Multi-Storey Apartment Building – Malawi",
-    category: "Residential",
-    client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
-    location: "Lilongwe, Malawi",
-    status: "ONGOING",
-    img: "/hero1.jpg",
-    value: "USD 25,000,000",
-    description: "Multi-family residential complex for embassy staff. Built with modern residential amenities, shared gardens, and energy-conserving thermal shields.",
-    teamLead: "Eng. Peter John Mwamaso",
-    year: "2024 - Present",
-    highlights: [
-      "Staff apartment layouts with thermal shields",
-      "Seismic analysis and block design",
-      "Eco-friendly landscaping water recycling system"
-    ]
-  },
-  {
-    title: "Chancery & Ambassador's Residence – Muscat",
+    title: "Chancery & Ambassador's Residence – Muscat, Oman",
     category: "Government",
     client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
     location: "Muscat, Oman",
     status: "ONGOING",
     img: "/hero2.jpg",
     value: "USD 4,230,769.23",
-    description: "A custom designed chancery building in Muscat. Emphasizes modern architecture blended with Islamic visual cues, built with heat-reflecting cladding.",
+    description: "Proposed Construction of Multi-Storey Chancery Building & Ambassador Residence for Tanzania Embassy in Muscat, Oman",
     teamLead: "Arch. Dorothea Gervas",
     year: "2023 - Present",
     highlights: [
-      "Heat-reflecting marble facade structures",
-      "Secure perimeter zoning",
-      "Diplomatic reception hall frame engineering"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "Chancery, Investment & Ambassador's Residence – Riyadh",
+    title: "ICT Service Center (ISC) – NIDA Kibaha",
+    category: "Government",
+    client: "NIDA / CIP INTERNATIONAL",
+    location: "Kibaha, Coastal Region",
+    status: "ONGOING",
+    img: "/WEBSITE DEVELOPMENT/kibaha.png",
+    value: "USD 3,868,245.50",
+    description: "Proposed ICT Service Center (ISC) at NIDA Kibaha Offices - Coastal Region.",
+    teamLead: "Arch. Dorothea Gervas",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Chancery, Investment & Ambassador's Residence – Riyadh, Saudi Arabia",
     category: "Government",
     client: "MINISTRY OF FOREIGN AFFAIRS / ABECC",
     location: "Riyadh, Saudi Arabia",
     status: "ONGOING",
     img: "/hero3.jpg",
     value: "USD 2,307,692.31",
-    description: "Diplomatic complex in Riyadh featuring official chancery offices, investment floors, and ambassadorial residence. Optimized for extreme desert climates.",
+    description: "Proposed Construction of Chancery, Investment and Ambassador's Residence Building for Tanzania High Commission in Riyadh, Saudi Arabia",
     teamLead: "Eng. Peter John Mwamaso",
     year: "2024 - Present",
     highlights: [
-      "High efficiency HVAC layout integration",
-      "Desert thermal protection facade design",
-      "Integrated security screening structures"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "NECTA Warehouse Building – Mbezi Wani",
-    category: "Infrastructure",
-    client: "NECTA",
-    location: "Mbezi Wani, Dar es Salaam",
+    title: "TANESCO Head Office, Ihumwa in Dodoma, Tanzania",
+    category: "Government",
+    client: "TANESCO / NOSUTO ASSOCIATES",
+    location: "Ihumwa Government City, Dodoma",
     status: "ONGOING",
-    img: "/hero1.jpg",
-    value: "TZS 865,000,000",
-    description: "Heavy-duty secure storage warehouse for national examination materials. Features thick reinforced concrete walls, specialized locking mechanisms, and fireproofing.",
+    img: "/Tanesco.jpg",
+    value: "TZS 4,920,350,000",
+    description: "Proposed Provision of Consultancy Services for Design and Supervision of Construction of TANESCO Head Office at Ihumwa Government City Dodoma.",
+    teamLead: "Eng. Peter John Mwamaso",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Hostel & Multipurpose Building – BOT Mwanza, Tanzania",
+    category: "Government",
+    client: "BANK OF TANZANIA / NOSUTO ASSOCIATES",
+    location: "Mwanza, Tanzania",
+    status: "ONGOING",
+    img: "/hero2.jpg",
+    value: "TZS 4,657,582,765",
+    description: "Provision of Consultancy Services for Design Review and Supervision for Completion of Hostel and Multi Purpose Building at BOT Mwanza",
     teamLead: "QS. Dr. Mhenga Agneta",
     year: "2024 - Present",
     highlights: [
-      "Fire-rated structural wall assembly",
-      "Industrial load bearing slab engineering",
-      "Advanced security ventilation protection"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
     ]
   },
   {
-    title: "NECTA Printing Factory Building – Bamaga",
-    category: "Commercial",
-    client: "NECTA",
-    location: "Bamaga, Dar es Salaam",
-    status: "ONGOING",
-    img: "/hero2.jpg",
-    value: "TZS 786,000,000",
-    description: "Developing structural systems to house heavy examination printing machines. The building is engineered to damp heavy industrial machinery vibrations.",
-    teamLead: "Arch. Dorothea Gervas",
-    year: "2024 - Present",
-    highlights: [
-      "Vibration damping foundation structure design",
-      "Industrial ventilation layout integration",
-      "Heavy power cabling channels in slab"
-    ]
-  },
-  {
-    title: "WASH Facilities & Dormitories – Kigoma Region",
-    category: "Infrastructure",
-    client: "MINISTRY OF EDUCATION / ENABEL",
-    location: "Kigoma Region",
-    status: "ONGOING",
-    img: "/hero3.jpg",
-    value: "Euro 2,000,000",
-    description: "Large-scale community infrastructure project. Constructing modern water, sanitation, and hygiene facilities alongside safe student dormitories in Kigoma.",
-    teamLead: "Eng. Peter John Mwamaso",
-    year: "2023 - Present",
-    highlights: [
-      "Eco-friendly modular sanitation designs",
-      "Reinforced masonry dorm construction in rural areas",
-      "Rainwater catchment structure integration"
-    ]
-  },
-  {
-    title: "Factory Scheme – Kisemvule",
-    category: "Commercial",
+    title: "Factory Scheme – Mkuranga, Tanzania",
+    category: "Industrial",
     client: "PEACE SUCCESS TANZANIA LTD",
-    location: "Kisemvule, Mkuranga, Coastal Region",
+    location: "Kisemvule, Mkuranga, Coastal Region, Tanzania",
     status: "COMPLETED",
     img: "/hero1.jpg",
     value: "TZS 3,000,000,000",
-    description: "A comprehensive industrial factory complex completed at Kisemvule. Features large clear-span warehouses, administrative office block, and heavy vehicle logistics roads.",
+    description: "Proposed Construction of Factory Scheme at Kisemvule, Mkuranga in Coastal Region Tanzania.",
     teamLead: "QS. Dr. Mhenga Agneta",
     year: "Completed 2024",
     highlights: [
-      "Portal steel framing with 30m clear spans",
-      "Heavy loading bay layouts and structural roads",
-      "Efficient warehouse ventilation systems"
+      "Design and supervision of Plumbing and Fire Fighting systems",
+      "Design and supervision of Data and Communication systems, Security Systems (CCTV) and Access Control systems",
+      "Design and supervision of Electrical systems and fire alarm system",
+      "Design and supervision of Central Air-conditions systems"
+    ]
+  },
+  {
+    title: "Bus Terminal at Kijangwani area, Zanzibar",
+    category: "Government",
+    client: "ZANZIBAR SOCIAL SECURITY FUND",
+    location: "Kijangwani Area, Zanzibar",
+    status: "ONGOING",
+    img: "/hero3.jpg",
+    value: "TZS 2,500,000,000",
+    description: "Proposed Construction of Zanzibar Bus Terminal at Kijangwani Area Zanzibar.",
+    teamLead: "QS. Dr. Mhenga Agneta",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "NECTA Warehouse Building – Mbezi Wani, Dar es salaam in Tanzania",
+    category: "Government",
+    client: "NECTA",
+    location: "Mbezi Wani, Dar es Salaam, Tanzania",
+    status: "ONGOING",
+    img: "/hero1.jpg",
+    value: "TZS 865,000,000",
+    description: "Proposed Design of Ware House Building for the National Examinations Council of Tanzania(NECTA) to be Built at Mbezi Wani Area, in Kinondoni Municipal, Dar es Salaam, Tanzania.",
+    teamLead: "QS. Dr. Mhenga Agneta",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "NECTA Printing Factory Building – Kinondoni, Dar es salaam in Tanzania",
+    category: "Government",
+    client: "NECTA",
+    location: "Bamaga, Kinondoni Municipal, Dar es Salaam, Tanzania",
+    status: "ONGOING",
+    img: "/WEBSITE DEVELOPMENT/bamaga.jpg",
+    value: "TZS 786,000,000",
+    description: "Proposed Design of Printing Factory Building for the National Examinations Council of Tanzania (NECTA) to be Built at Bamaga, in Kinondoni Municipal, Dar es Salaam, Tanzania.",
+    teamLead: "Arch. Dorothea Gervas",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "WASH Facilities & Dormitories – Kigoma, Tanzania",
+    category: "Government",
+    client: "MINISTRY OF EDUCATION / ENABEL",
+    location: "Kigoma Region, Tanzania",
+    status: "ONGOING",
+    img: "/hero3.jpg",
+    value: "Euro 2,000,000",
+    description: "Public Works Contract for the Construction of 25 Wash Facilities, of Which 5 Schools Include Dormitories in Kigoma Region.",
+    teamLead: "Eng. Peter John Mwamaso",
+    year: "2023 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Renovation of NSSF Benjamini William Mkapa Pension Towers - Dar es salaam Tanzania",
+    category: "Government",
+    client: "NATIONAL SOCIAL SECURITY FUND (NSSF)",
+    location: "Dar es Salaam, Tanzania",
+    status: "ONGOING",
+    img: "/Nssf.jpg",
+    value: "Confidential",
+    description: "Provision of Consultancy Services for Renovation of NSSF Benjamin William Mkapa Pension Towers",
+    teamLead: "QS. Dr. Mhenga Agneta",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "City Council of Dodoma Head Office In Dodoma, Tanzania.",
+    category: "Government",
+    client: "DODOMA CITY COUNCIL",
+    location: "Dodoma, Tanzania",
+    status: "ONGOING",
+    img: "/WEBSITE DEVELOPMENT/DODOMA JIJI.jpg",
+    value: "Confidential",
+    description: "Proposed Design and Construction Supervision of the City Council of Dodoma Head Office In Dodoma.",
+    teamLead: "Arch. Dorothea Gervas",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Academic Complex Block for 200 Students at Kibondo, Kigoma in Tanzania",
+    category: "Government",
+    client: "MINISTRY OF EDUCATION / ENABEL",
+    location: "Kibondo, Kigoma, Tanzania",
+    status: "ONGOING",
+    img: "/hero2.jpg",
+    value: "Confidential",
+    description: "Proposed Academic Complex Block for 200 Students to Be Built on Plot No.1 Block \"D\" at Nengo Kibondo District.",
+    teamLead: "Eng. Peter John Mwamaso",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Residential Building To Be Built in Goba - Dar es Salaam, Tanzania",
+    category: "Residential",
+    client: "PRIVATE CLIENT",
+    location: "Goba, Dar es Salaam, Tanzania",
+    status: "ONGOING",
+    img: "/WEBSITE DEVELOPMENT/GOBA RESIDENTIAL.jpg",
+    value: "Confidential",
+    description: "Proposed Residential Building to be Built on Plot No:...,      Block \".....\" at Goba, Kinondoni District Dar Es Salaam.",
+    teamLead: "Arch. Dorothea Gervas",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
+    ]
+  },
+  {
+    title: "Academic Complex Block For 600 Students at Rombo, Tanzania",
+    category: "Government",
+    client: "MINISTRY OF EDUCATION / ENABEL",
+    location: "Rombo, Tanzania",
+    status: "ONGOING",
+    img: "/hero3.jpg",
+    value: "Confidential",
+    description: "Proposed Academic Complex Block for 600 Students to be Built on Plot No.2 Block \"A\" at Kiwanda Rombo District",
+    teamLead: "Eng. Peter John Mwamaso",
+    year: "2024 - Present",
+    highlights: [
+      "Architectural designs and construction documentation",
+      "Cost estimation, tender documentation, and construction cost control",
+      "Data and Communication, Security Systems (CCTV) and Access Control",
+      "Design and supervision of electrical systems",
+      "Design and supervision of HVAC, plumbing, drainage, and fire fighting systems"
     ]
   }
 ];

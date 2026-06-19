@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 const partners = [
   { name: 'CPI International Ltd', logo: '/partners/partner-cpi.jpg', subtitle: 'Corporate Performance Improvement' },
   { name: 'National Examinations Council of Tanzania', logo: '/partners/partner-necta.jpg', subtitle: 'NECTA' },
-  { name: 'PT. Multitama Karyatronindo', logo: '/partners/partner-mk.jpg', subtitle: 'Mechanical & Kentunnel Contractor' },
+
   { name: 'Peace Success Tanzania Ltd', logo: '/partners/partner-peace.jpg', subtitle: 'Tanzania' },
   { name: 'National Identification Authority', logo: '/partners/partner-nida.jpg', subtitle: 'NIDA Tanzania' },
 ];

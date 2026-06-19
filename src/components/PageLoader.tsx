@@ -28,7 +28,7 @@ export function PageLoader() {
           className="flex items-center gap-3"
         >
           <img
-            src="/pklogo.png"
+            src="/pklogo_backup.png"
             alt="Peakey International"
             className="h-12 w-auto drop-shadow-md"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

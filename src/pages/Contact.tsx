@@ -10,7 +10,7 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    
+
     // Honeypot check for naive bots
     const honey = formData.get('_honey');
     if (honey) {
@@ -43,9 +43,9 @@ export function Contact() {
     <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10">
       <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12 pt-24 pb-8 w-full">
         <div className="text-center">
-          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+          {/* <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
             Connect
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
             {t('contact.title')}
           </h2>
@@ -54,10 +54,10 @@ export function Contact() {
           </p>
         </div>
       </div>
-      
+
       <div className="mx-auto max-w-[1280px] w-full px-6 py-12 sm:px-12 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-          
+
           {/* Contact Information & Map */}
           <div className="flex flex-col space-y-8">
             <div>
@@ -84,8 +84,9 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email</h4>
+                    <p className="text-slate-900 font-medium"><b>info@peakeyinternational.com</b></p>
                     <p className="text-slate-900 font-medium">peakeyinternational@gmail.com</p>
-                    <p className="text-slate-900 font-medium">info@peakeyinternational.com</p>
+
                   </div>
                 </div>
 
@@ -96,7 +97,7 @@ export function Contact() {
                   <div>
                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Address</h4>
                     <p className="text-slate-900 font-medium">
-                      House No. 15, Msewe Ubungo,<br />
+                      PK House, Msewe Ubungo,<br />
                       P.O. Box 41802 - Dar es Salaam, Tanzania
                     </p>
                   </div>
@@ -105,10 +106,10 @@ export function Contact() {
             </div>
 
             {/* Google Map */}
-            <div className="w-full flex-1 min-h-[300px] rounded-3xl overflow-hidden border border-slate-200 shadow-lg relative bg-slate-200">
+            <div className="w-full h-[300px] rounded-3xl overflow-hidden border border-slate-200 shadow-lg relative bg-slate-200">
               <iframe
                 title="Peakey International Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63406.84065608684!2d39.141517409228!3d-6.804369792070747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c16ddcad533%3A0xcfd6dc3bc4cd0965!2sUbungo%2C%20Dar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1sen!2sus!4v1715423851502!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.8960195802756!2d39.19090617884567!3d-6.782507399999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4f006a86b449%3A0xc9cdede8c9a508ca!2speakey%20intenational!5e0!3m2!1sen!2stz!4v1781879781046!5m2!1sen!2stz"
                 width="100%"
                 height="100%"
                 style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
@@ -122,99 +123,99 @@ export function Contact() {
           {/* Contact Form */}
           <div className="flex flex-col">
             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-8 text-center lg:text-left hidden lg:block">Direct Inquiry</h2>
-          {status === 'success' ? (
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="rounded-xl bg-slate-900 p-8 text-center shadow-lg border border-slate-800"
-            >
-              <CheckCircle className="mx-auto h-12 w-12 text-red-500 mb-4" />
-              <h3 className="text-xl font-bold text-white mb-2">Message Sent</h3>
-              <p className="text-slate-400 text-sm">{t('contact.success')}</p>
-              <button 
-                onClick={() => setStatus('idle')}
-                className="mt-6 text-xs font-bold text-red-500 hover:text-red-400 underline"
+            {status === 'success' ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="rounded-xl bg-slate-900 p-8 text-center shadow-lg border border-slate-800"
               >
-                Send another message
-              </button>
-            </motion.div>
-          ) : (
-            <div className="bg-[linear-gradient(145deg,theme(colors.white),theme(colors.slate.50))] p-8 sm:p-12 rounded-3xl shadow-lg shadow-slate-300/30 border border-slate-200 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-400/40 hover:border-slate-300">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                
-                {/* Security & Configuration Fields (Background) */}
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_subject" value="New Inquiry from Peakey International Website" />
-                <input type="hidden" name="_template" value="table" />
-                <div className="absolute left-[-9999px] opacity-0" aria-hidden="true">
-                  <label htmlFor="honey">Do not fill this out if you are human</label>
-                  <input type="text" name="_honey" id="honey" tabIndex={-1} autoComplete="off" />
-                </div>
+                <CheckCircle className="mx-auto h-12 w-12 text-red-500 mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Message Sent</h3>
+                <p className="text-slate-400 text-sm">{t('contact.success')}</p>
+                <button
+                  onClick={() => setStatus('idle')}
+                  className="mt-6 text-xs font-bold text-red-500 hover:text-red-400 underline"
+                >
+                  Send another message
+                </button>
+              </motion.div>
+            ) : (
+              <div className="bg-[linear-gradient(145deg,theme(colors.white),theme(colors.slate.50))] p-8 sm:p-12 rounded-3xl shadow-lg shadow-slate-300/30 border border-slate-200 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-400/40 hover:border-slate-300">
+                <form onSubmit={handleSubmit} className="space-y-6">
 
-                <div>
-                  <label htmlFor="name" className="sr-only">
-                    {t('contact.name')}
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder={t('contact.name')}
-                    required
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 placeholder:text-slate-400 transition-all"
-                  />
-                </div>
+                  {/* Security & Configuration Fields (Background) */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_subject" value="New Inquiry from Peakey International Website" />
+                  <input type="hidden" name="_template" value="table" />
+                  <div className="absolute left-[-9999px] opacity-0" aria-hidden="true">
+                    <label htmlFor="honey">Do not fill this out if you are human</label>
+                    <input type="text" name="_honey" id="honey" tabIndex={-1} autoComplete="off" />
+                  </div>
 
-                <div>
-                  <label htmlFor="email" className="sr-only">
-                    {t('contact.email')}
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder={t('contact.email')}
-                    required
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 placeholder:text-slate-400 transition-all"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="name" className="sr-only">
+                      {t('contact.name')}
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder={t('contact.name')}
+                      required
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 placeholder:text-slate-400 transition-all"
+                    />
+                  </div>
 
-                <div>
-                  <label htmlFor="message" className="sr-only">
-                    {t('contact.message')}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    placeholder={t('contact.message')}
-                    required
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 placeholder:text-slate-400 transition-all resize-none"
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="email" className="sr-only">
+                      {t('contact.email')}
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder={t('contact.email')}
+                      required
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 placeholder:text-slate-400 transition-all"
+                    />
+                  </div>
 
-                <div className="pt-4">
-                  {status === 'error' && (
-                    <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-sm text-center">
-                      Failed to send message. Please try again later.
-                    </div>
-                  )}
-                  <button
-                    type="submit"
-                    disabled={status === 'submitting'}
-                    className="w-full flex justify-center items-center gap-2 bg-red-600 text-white text-sm font-black uppercase tracking-widest py-4 rounded-xl shadow-xl shadow-red-900/20 hover:bg-red-700 disabled:opacity-70 transition-all"
-                  >
-                    {status === 'submitting' ? 'Sending...' : t('contact.submit')}
-                    {status !== 'submitting' && <Send className="h-4 w-4 ml-1" />}
-                  </button>
-                </div>
-              </form>
-              <p className="text-[9px] text-slate-500 mt-4 text-center italic">Protected by 256-bit SSL encryption.</p>
-            </div>
-          )}
+                  <div>
+                    <label htmlFor="message" className="sr-only">
+                      {t('contact.message')}
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={6}
+                      placeholder={t('contact.message')}
+                      required
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:ring-2 focus:ring-red-500 focus:border-red-500 placeholder:text-slate-400 transition-all resize-none"
+                    />
+                  </div>
+
+                  <div className="pt-4">
+                    {status === 'error' && (
+                      <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-xl text-sm text-center">
+                        Failed to send message. Please try again later.
+                      </div>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={status === 'submitting'}
+                      className="w-full flex justify-center items-center gap-2 bg-red-600 text-white text-sm font-black uppercase tracking-widest py-4 rounded-xl shadow-xl shadow-red-900/20 hover:bg-red-700 disabled:opacity-70 transition-all"
+                    >
+                      {status === 'submitting' ? 'Sending...' : t('contact.submit')}
+                      {status !== 'submitting' && <Send className="h-4 w-4 ml-1" />}
+                    </button>
+                  </div>
+                </form>
+                <p className="text-[9px] text-slate-500 mt-4 text-center italic">Protected by 256-bit SSL encryption.</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

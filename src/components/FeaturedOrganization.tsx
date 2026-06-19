@@ -6,7 +6,7 @@ export function FeaturedOrganization() {
   const leader = {
     name: "QS. Dr. Mhenga Agneta",
     image: "/qs_mhenga.jpg",
-    role: "Deputy Honorary Secretary, TIQS / Reviewer & Expert",
+    role: "",
     bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum. She also holds a BSc. in Building Economics from Ardhi University.",
     highlights: [
       "12+ years of experience across Tanzania, China, and the UK.",
@@ -25,9 +25,9 @@ export function FeaturedOrganization() {
       <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+          {/* <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
             Our Leadership
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
             Our Organisation
           </h2>

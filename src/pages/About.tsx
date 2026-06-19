@@ -17,9 +17,9 @@ export function About() {
     <div className="flex flex-col w-full relative z-10 bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))]">
       <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12 pt-24 pb-8 w-full">
         <div className="text-center">
-          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+          {/* <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
             Who We Are
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
             {t('nav.about')}
           </h2>
@@ -134,7 +134,7 @@ export function About() {
 
         {/* Values Section: Creative Tree Structure */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
-            <div className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-3 border border-slate-200">What Drives Us</div>
+            {/* <div className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-3 border border-slate-200">What Drives Us</div> */}
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">Core Values</h2>
             <p className="text-slate-500 font-light max-w-lg mx-auto">The fundamental principles branching out to shape our global operations and deliver excellence.</p>
         </div>

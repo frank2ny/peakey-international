@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { Sparkles, Calendar } from 'lucide-react';
 
 export function Blog() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = "Publications & Blog - Peakey International Group";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Stay tuned for Peakey International Group\'s latest company updates, event calendars, project announcements, and global engineering insights.');
+    }
+  }, []);
 
   return (
     <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10 min-h-[70vh] flex-1">

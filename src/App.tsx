@@ -51,24 +51,45 @@ function ScrollToHash() {
 
 /** Shows the branded PageLoader only for sub-page navigations, not the homepage. */
 function SubPageSuspense({ children }: { children: React.ReactNode }) {
-  const location = useLocation();
-  const isSubPage = SUB_PAGES.includes(location.pathname);
   const [isLoading, setIsLoading] = useState(true);
 
-  // When pathname changes, briefly show the loader
+  // Show the loader only on initial site mount, waiting for critical images to load
   useEffect(() => {
-    setIsLoading(true);
-    const delay = isSubPage ? 600 : 400; // brief loader display on initial or route switch
-    const t = setTimeout(() => setIsLoading(false), delay);
-    return () => clearTimeout(t);
-  }, [location.pathname, isSubPage]);
+    const criticalImages = [
+      '/pklogo_backup.png',
+      '/WEBSITE DEVELOPMENT/DODOMA JIJI.jpg'
+    ];
 
-  // Ensure viewports start at the top after a subpage has loaded
-  useEffect(() => {
-    if (!isLoading && isSubPage && !location.hash) {
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }
-  }, [isLoading, isSubPage, location.hash]);
+    let loadedCount = 0;
+    const totalImages = criticalImages.length;
+
+    // Safety timeout: dismiss the loader after max 2.5s to prevent hanging on slow connections
+    const safetyTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    const checkImageLoaded = () => {
+      loadedCount++;
+      if (loadedCount === totalImages) {
+        clearTimeout(safetyTimeout);
+        // Slightly delay the fade out for smooth transition
+        setTimeout(() => setIsLoading(false), 200);
+      }
+    };
+
+    criticalImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      if (img.complete) {
+        checkImageLoaded();
+      } else {
+        img.onload = checkImageLoaded;
+        img.onerror = checkImageLoaded; // continue even if an image fails to load
+      }
+    });
+
+    return () => clearTimeout(safetyTimeout);
+  }, []);
 
   return (
     <>

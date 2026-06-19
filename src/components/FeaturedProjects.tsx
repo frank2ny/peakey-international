@@ -20,9 +20,9 @@ export function FeaturedProjects() {
       <div className="relative max-w-[1280px] mx-auto px-6 sm:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
+          {/* <div className="inline-block px-4 py-1.5 bg-red-50 text-red-600 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 border border-red-100">
             {t('projects.featuredTitle')}
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-5xl font-serif font-black text-slate-900 tracking-tight leading-tight">
             {t('projects.featuredTitle')}
           </h2>
@@ -51,16 +51,6 @@ export function FeaturedProjects() {
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 />
-                <div className="absolute top-4 right-4 z-20">
-                  <span className="bg-white/95 backdrop-blur text-red-600 px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-sm">
-                    {project.status === 'ONGOING' ? t('projects.ongoing') : t('projects.completed')}
-                  </span>
-                </div>
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="bg-slate-900/80 backdrop-blur text-white px-3 py-1 rounded-full text-[9px] font-bold tracking-wider">
-                    {project.category}
-                  </span>
-                </div>
               </div>
 
               {/* Card Body */}

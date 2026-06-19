@@ -9,8 +9,10 @@ const leadership = [
     id: "mhenga",
     name: "QS. Dr. Mhenga Agneta",
     image: "/qs_mhenga.jpg",
-    role: "Deputy Honorary Secretary, TIQS",
-    tag: "Leadership",
+    // role: "Deputy Honorary Secretary, TIQS",
+        role: "Deputy Honorary Secretary, TIQS",
+
+    tag: "MANAGING DIRECTOR",
     tagColor: "from-red-600 to-rose-500",
     bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum. She also holds a BSc. in Building Economics from Ardhi University.",
     details: [
@@ -29,7 +31,7 @@ const directors = [
     id: "mwamaso",
     name: "CEng. Peter John Mwamaso",
     image: "/CEng. Peter John Mwamaso.jpeg",
-    role: "Electromechanical Engineer",
+    role: "Technical Director (Electromechanical Engineer)",
     tag: "Engineering",
     bio: "Registered as Professional and Consulting Engineer by ERB. Over 25 years of experience in Electrical and Mechanical Engineering.",
     details: [
@@ -68,7 +70,7 @@ const directors = [
     name: "Titus Frank",
     image: "/team-member-6.jpg",
     role: "Quantity Surveyor",
-    tag: "QS",
+    tag: "Quantity Surveyor",
     bio: "Quantity Surveyor with experience in construction cost management, BOQ preparation, tender evaluation, contract administration, and project supervision.",
     details: [
       "National ID System Expansion Project Phase II (NIDA).",
@@ -146,6 +148,14 @@ const tagColors: Record<string, string> = {
 export function Organization() {
   const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.title = "Our Team & Leadership - Peakey International Group";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Meet the core leadership and highly specialized technical directors behind Peakey International Group\'s engineering, architectural, and project management excellence.');
+    }
+  }, []);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -405,13 +415,13 @@ export function Organization() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden text-center bg-slate-950 rounded-3xl p-10 sm:p-16"
+          className="relative overflow-hidden text-center bg-gradient-to-br from-slate-950 via-slate-900 to-rose-950/30 rounded-3xl p-10 sm:p-16 border border-rose-500/10 hover:border-rose-500/20 transition-all duration-500"
         >
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px]" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-red-600/10 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:32px_32px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-r from-red-600/15 to-rose-500/15 rounded-full blur-[80px] pointer-events-none" />
 
           <div className="relative">
-            <div className="inline-block px-4 py-1.5 bg-red-600/10 border border-red-600/20 text-red-400 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+            <div className="inline-block px-4 py-1.5 bg-rose-600/10 border border-rose-600/20 text-rose-400 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
               Work With Us
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight">Ready to Start a Project?</h2>
@@ -421,13 +431,13 @@ export function Organization() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/#contact"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-500 text-white font-black tracking-widest uppercase text-sm rounded-xl shadow-xl shadow-red-900/30 transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-black tracking-widest uppercase text-sm rounded-xl shadow-xl shadow-red-900/20 hover:shadow-rose-600/30 transition-all duration-300 hover:-translate-y-0.5"
               >
                 Contact Our Team
               </Link>
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 border border-white/20 hover:bg-white/20 text-white font-black tracking-widest uppercase text-sm rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/5 border border-rose-500/15 hover:bg-white/10 hover:border-rose-500/30 text-white font-black tracking-widest uppercase text-sm rounded-xl transition-all duration-300 hover:-translate-y-0.5"
               >
                 View Our Projects
               </Link>

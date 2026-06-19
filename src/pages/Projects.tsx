@@ -28,6 +28,14 @@ function GlobalMap() {
       <div className="relative aspect-[2.2/1] min-h-[400px] w-full bg-[linear-gradient(135deg,theme(colors.slate.50),theme(colors.slate.100))] rounded-3xl overflow-hidden border border-slate-200 shadow-xl shadow-slate-300/30 group p-4 sm:p-8">
         {/* Animated grid background for technical feel */}
         <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:32px_32px] opacity-40"></div>
+        
+        {/* World map illustration */}
+        <img 
+          src="/world-map.svg" 
+          alt="World Map Illustration" 
+          className="absolute inset-0 w-full h-full object-fill opacity-[0.08] pointer-events-none select-none"
+        />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-transparent to-transparent"></div>
 
         {/* Dynamic connection lines SVG */}
@@ -134,6 +142,14 @@ export function Projects() {
   const [sortBy, setSortBy] = useState('value-desc');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+  useEffect(() => {
+    document.title = "Our Projects - Peakey International Group";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Explore our comprehensive portfolio of structural, civil, and mechanical engineering projects, from commercial complexes to government landmarks.');
+    }
+  }, []);
+
   // Helper to parse values for sorting (convert USD to TSHS roughly for scale equivalence)
   const parseProjectValue = (valStr: string): number => {
     if (valStr.toLowerCase() === 'confidential') return 0;
@@ -156,6 +172,7 @@ export function Projects() {
       const matchesCategory = selectedCategory === 'ALL' || 
         (selectedCategory === 'GOVERMENT' && p.category === 'Government') ||
         (selectedCategory === 'COMMERSIAL' && p.category === 'Commercial') ||
+        (selectedCategory === 'INDUSTRIAL' && p.category === 'Industrial') ||
         (selectedCategory === 'RESIDENTIAL' && p.category === 'Residential');
       const matchesStatus = selectedStatus === 'All' || p.status === selectedStatus;
 
@@ -177,11 +194,11 @@ export function Projects() {
       return 0;
     });
 
-  const categories = ['ALL', 'GOVERMENT', 'COMMERSIAL', 'RESIDENTIAL'];
+  const categories = ['ALL', 'GOVERMENT', 'COMMERSIAL', 'INDUSTRIAL', 'RESIDENTIAL'];
 
   return (
     <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10 overflow-hidden min-h-screen">
-      <PageHeader subtitle={t('projects.dashboardSubtitle')} />
+      <PageHeader title="OUR PROJECT" subtitle={t('projects.dashboardSubtitle')} />
 
       <div className="max-w-[1280px] mx-auto w-full px-6 sm:px-12 pb-24">
         
@@ -227,8 +244,8 @@ export function Projects() {
                 onChange={(e) => setSortBy(e.target.value)}
                 className="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all appearance-none cursor-pointer"
               >
-                <option value="value-desc">{t('projects.sortValueHigh')}</option>
-                <option value="value-asc">{t('projects.sortValueLow')}</option>
+                {/* <option value="value-desc">{t('projects.sortValueHigh')}</option>
+                <option value="value-asc">{t('projects.sortValueLow')}</option> */}
                 <option value="name-asc">{t('projects.sortAZ')}</option>
                 <option value="name-desc">{t('projects.sortZA')}</option>
               </select>
@@ -254,6 +271,7 @@ export function Projects() {
                     : projectsData.filter(p => {
                         if (cat === 'GOVERMENT') return p.category === 'Government';
                         if (cat === 'COMMERSIAL') return p.category === 'Commercial';
+                        if (cat === 'INDUSTRIAL') return p.category === 'Industrial';
                         if (cat === 'RESIDENTIAL') return p.category === 'Residential';
                         return false;
                       }).length;
@@ -275,29 +293,7 @@ export function Projects() {
               </div>
             </div>
 
-            {/* Statuses */}
-            <div className="flex flex-col gap-2">
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t('projects.statusLabel')}</span>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { value: 'All', label: t('projects.statusAll') },
-                  { value: 'ONGOING', label: t('projects.ongoing') },
-                  { value: 'COMPLETED', label: t('projects.completed') }
-                ].map((status) => (
-                  <button
-                    key={status.value}
-                    onClick={() => setSelectedStatus(status.value)}
-                    className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 ${
-                      selectedStatus === status.value
-                        ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/30'
-                        : 'bg-slate-50 border border-slate-200 text-slate-500 hover:bg-slate-100 hover:text-slate-800'
-                    }`}
-                  >
-                    {status.label}
-                  </button>
-                ))}
-              </div>
-            </div>
+
 
           </div>
         </div>
@@ -340,18 +336,6 @@ export function Projects() {
                     alt={project.title} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                   />
-                  <div className="absolute top-4 right-4 z-20">
-                    <span className={`px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest shadow-sm ${
-                      project.status === 'ONGOING' ? 'bg-red-50 text-red-600' : 'bg-emerald-50 text-emerald-600'
-                    }`}>
-                      {project.status === 'ONGOING' ? t('projects.ongoing') : t('projects.completed')}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 left-4 z-20">
-                    <span className="bg-slate-900/80 backdrop-blur text-white px-3 py-1 rounded-full text-[9px] font-bold tracking-wider">
-                      {project.category}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Details */}

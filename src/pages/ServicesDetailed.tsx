@@ -34,10 +34,17 @@ interface ServiceDetail {
   }[];
   bullets?: string[];
 }
-
 export function ServicesDetailed() {
   const { t } = useTranslation();
   const [activeId, setActiveId] = useState('project-management');
+
+  useEffect(() => {
+    document.title = "Our Services - Peakey International Group";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Discover Peakey International Group\'s corporate services, including Project Management, Quantity Surveying, Mechanical & Electrical Engineering, and Contract Management.');
+    }
+  }, []);
 
   const services: ServiceDetail[] = [
     {
@@ -50,6 +57,20 @@ export function ServicesDetailed() {
         "Maintaining cost control through comprehensive risk management and straightforward reporting",
         "Monitoring and verifying project progress to meet contract standards",
         "Ensuring effective communication and resource utilization throughout the project lifecycle"
+      ]
+    },
+    {
+      id: "contract-management",
+      title: "Contract Management",
+      icon: FileText,
+      description: "Managing project contracts to prevent risks, verify contract standards compliance, and resolve complex procurement and project claims.",
+      bullets: [
+        "Contract administration and project change control",
+        "Preparation and reviewing of project contract documents",
+        "Amicable dispute resolution and mediation consulting",
+        "Claims management, evaluation, and assessments",
+        "Tender evaluations, bid negotiation, and award consulting",
+        "Rigorous monitoring of compliance with contract standards"
       ]
     },
     {
@@ -120,84 +141,6 @@ export function ServicesDetailed() {
       ]
     },
     {
-      id: "ict-engineering",
-      title: "ICT Engineering",
-      icon: Cpu,
-      description: "Designing advanced, secure electronic security networks, emergency evacuation systems, integrated communications, and intelligent automation systems.",
-      subCategories: [
-        {
-          title: "Electronic Security Systems",
-          icon: Shield,
-          items: [
-            "CCTV Surveillance Systems & Video Analytics",
-            "Advanced Access Control Systems",
-            "Intruder Alarm & Perimeter Intrusion Detection Systems"
-          ]
-        },
-        {
-          title: "Emergency & Safety Systems",
-          icon: HardDrive,
-          items: [
-            "Emergency Evacuation & Voice Alarm Systems",
-            "High-security Screening & Metal Detection Equipment"
-          ]
-        },
-        {
-          title: "Data & Communication Systems",
-          icon: Cpu,
-          items: [
-            "High-speed Data & Communication Networks",
-            "Telecommunications & IP PBX Systems",
-            "Congress & Digital Translation Systems",
-            "Public Address (PA) and Intercom Systems"
-          ]
-        },
-        {
-          title: "Intelligent Systems",
-          items: [
-            "Smart building automation integrations",
-            "Integrated command center control consoles"
-          ]
-        }
-      ]
-    },
-    {
-      id: "electrical-engineering",
-      title: "Electrical Engineering",
-      icon: Zap,
-      description: "Delivering design and supervision of electrical power systems, sub-stations, transmission paths, lighting, and lightning protection systems.",
-      subCategories: [
-        {
-          title: "Power Systems (LV, MV, HV)",
-          items: [
-            "Design and construction supervision of HV substations",
-            "Installation of MV underground cables & overhead lines",
-            "MV/LV substation design & distribution networks",
-            "Assembling of MV switchboards & distribution panels"
-          ]
-        },
-        {
-          title: "Building Services",
-          items: [
-            "Electrical designs for commercial & public buildings",
-            "Industrial power supply layouts & load establishments",
-            "Electrical installations for residential complexes",
-            "Lightning protection systems and earthing designs"
-          ]
-        },
-        {
-          title: "Consulting & Quality Assurance",
-          items: [
-            "Project identification & feasibility studies",
-            "Preparation of technical specs & bidding documents",
-            "Testing, commissioning, QA/QC and inspections",
-            "Fault diagnostics and maintenance of equipment",
-            "Specialized electrical designs for oil & gas facilities"
-          ]
-        }
-      ]
-    },
-    {
       id: "mechanical-engineering",
       title: "Mechanical Engineering",
       icon: Settings,
@@ -245,17 +188,81 @@ export function ServicesDetailed() {
       ]
     },
     {
-      id: "contract-management",
-      title: "Contract Management",
-      icon: FileText,
-      description: "Managing project contracts to prevent risks, verify contract standards compliance, and resolve complex procurement and project claims.",
-      bullets: [
-        "Contract administration and project change control",
-        "Preparation and reviewing of project contract documents",
-        "Amicable dispute resolution and mediation consulting",
-        "Claims management, evaluation, and assessments",
-        "Tender evaluations, bid negotiation, and award consulting",
-        "Rigorous monitoring of compliance with contract standards"
+      id: "electrical-engineering",
+      title: "Electrical Engineering",
+      icon: Zap,
+      description: "Delivering design and supervision of electrical power systems, sub-stations, transmission paths, lighting, and lightning protection systems.",
+      subCategories: [
+        {
+          title: "Power Systems (LV, MV, HV)",
+          items: [
+            "Construction and supervision of HV substations",
+            "Installation of MV underground cables & overhead lines",
+            "MV/LV substation design & distribution networks",
+            "Assembling of MV switchboards & distribution panels"
+          ]
+        },
+        {
+          title: "Building Services",
+          items: [
+            "Electrical designs for commercial & public buildings",
+            "Industrial power supply layouts & load establishments",
+            "Electrical installations for residential complexes",
+            "Lightning protection systems and earthing designs"
+          ]
+        },
+        {
+          title: "Consulting & Quality Assurance",
+          items: [
+            "Project identification & feasibility studies",
+            "Preparation of technical specs & bidding documents",
+            "Testing, commissioning, QA/QC and inspections",
+            "Fault diagnostics and maintenance of equipment",
+            "Specialized electrical designs for oil & gas facilities"
+          ]
+        }
+      ]
+    },
+    {
+      id: "ict-engineering",
+      title: "ICT Engineering",
+      icon: Cpu,
+      description: "Designing advanced, secure electronic security networks, emergency evacuation systems, integrated communications, and intelligent automation systems.",
+      subCategories: [
+        {
+          title: "Electronic Security Systems",
+          icon: Shield,
+          items: [
+            "CCTV Surveillance Systems & Video Analytics",
+            "Advanced Access Control Systems",
+            "Intruder Alarm & Perimeter Intrusion Detection Systems"
+          ]
+        },
+        {
+          title: "Emergency & Safety Systems",
+          icon: HardDrive,
+          items: [
+            "Emergency Evacuation & Voice Alarm Systems",
+            "High-security Screening & Metal Detection Equipment"
+          ]
+        },
+        {
+          title: "Data & Communication Systems",
+          icon: Cpu,
+          items: [
+            "High-speed Data & Communication Networks",
+            "Telecommunications & IP PBX Systems",
+            "Congress & Digital Translation Systems",
+            "Public Address (PA) and Intercom Systems"
+          ]
+        },
+        {
+          title: "Intelligent Systems",
+          items: [
+            "Smart building automation integrations",
+            "Integrated command center control consoles"
+          ]
+        }
       ]
     }
   ];
@@ -263,27 +270,45 @@ export function ServicesDetailed() {
   // Set up scroll listener to highlight current active ID
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 160;
-      for (const service of services) {
-        const el = document.getElementById(service.id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveId(service.id);
-            break;
+      const threshold = 180;
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+
+      let foundActive = '';
+
+      if (isAtBottom) {
+        foundActive = services[services.length - 1].id;
+      } else if (window.scrollY < 200) {
+        foundActive = services[0].id;
+      } else {
+        for (const service of services) {
+          const el = document.getElementById(service.id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= threshold && rect.bottom > threshold) {
+              foundActive = service.id;
+              break;
+            }
           }
         }
       }
+
+      if (foundActive) {
+        setActiveId(foundActive);
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToId = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const offset = el.offsetTop - 120;
+      const rect = el.getBoundingClientRect();
+      const absoluteTop = rect.top + window.scrollY;
+      const offset = absoluteTop - 120;
       window.scrollTo({
         top: offset,
         behavior: 'smooth'
@@ -293,8 +318,8 @@ export function ServicesDetailed() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10 overflow-hidden min-h-screen">
-      <PageHeader title="Our Detailed Services" subtitle="A breakdown of Peakey International's consulting, engineering, and quantity surveying competencies." />
+    <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10 min-h-screen">
+      <PageHeader title="Our Services" subtitle="A breakdown of Peakey International's consulting, engineering, and quantity surveying competencies." />
 
       <div className="max-w-[1280px] mx-auto w-full px-6 sm:px-12 pb-24">
         
