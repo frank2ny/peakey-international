@@ -4,15 +4,15 @@ import { GraduationCap, ArrowRight } from 'lucide-react';
 
 export function FeaturedOrganization() {
   const leader = {
-    name: "QS. Dr. Mhenga Agneta",
+    name: "QS. Dr. Agneta Mhenga",
     image: "/qs_mhenga.jpg",
     role: "",
-    bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum. She also holds a BSc. in Building Economics from Ardhi University.",
+    bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum, China. She also holds a BSc. Degree in Building Economics from Ardhi University. Dr. Mhenga is a certified Executive Woman leader and Lecturer at the University of Dar es Salaam having 12+ years of experience across Tanzania, China, and the UK.",
     highlights: [
-      "12+ years of experience across Tanzania, China, and the UK.",
-      "Expertise: Cost planning, contract administration, feasibility studies.",
-      "Project Manager for WEZESHA BINTI project funded by Enabel.",
-      "Part-time Lecturer at Ardhi University."
+      "Projects: National ID System Expansion Project Phase II (NIDA)",
+      "Projects: WEZESHA BINTI project Kigoma",
+      "Expertise: Project management and contract administration",
+      "Expertise: Feasibility studies and cost planning."
     ]
   };
 

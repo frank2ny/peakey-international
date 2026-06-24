@@ -7,19 +7,21 @@ import { Link } from 'react-router-dom';
 const leadership = [
   {
     id: "mhenga",
-    name: "QS. Dr. Mhenga Agneta",
+    name: "QS. Dr. Agneta Mhenga",
     image: "/qs_mhenga.jpg",
     // role: "Deputy Honorary Secretary, TIQS",
         role: "Deputy Honorary Secretary, TIQS",
 
     tag: "MANAGING DIRECTOR",
     tagColor: "from-red-600 to-rose-500",
-    bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum. She also holds a BSc. in Building Economics from Ardhi University.",
+    bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum, China. She also holds a BSc. Degree in Building Economics from Ardhi University. Dr. Mhenga is a certified Executive Woman leader and Lecturer at the University of Dar es Salaam having 12+ years of experience across Tanzania, China, and the UK.",
     details: [
-      "12+ years of experience across Tanzania, China, and the UK.",
-      "Expertise: Cost planning, contract administration, feasibility studies.",
-      "Project Manager for WEZESHA BINTI project funded by Enabel.",
-      "Part-time Lecturer at Ardhi University.",
+      "National ID System Expansion Project Phase II (NIDA).",
+      "WEZESHA BINTI project Kigoma."
+    ],
+    expertise: [
+      "Project management and contract administration.",
+      "Feasibility studies and cost planning."
     ],
     icon: GraduationCap,
     featured: true,
@@ -53,15 +55,21 @@ const directors = [
   },
   {
     id: "kazoba",
-    name: "Arch. Dorothea Gervas Kazoba",
+    name: "Arch. Dorothea Kazoba",
     image: "/Arch.Dorothea Gervas.jpg",
     role: "Technical Director (Architectural Technology)",
     tag: "Architecture",
-    bio: "Registered as Professional Architectural Technologist by AQRB. Over 7 years of specialised expertise.",
+    bio: "Holder of Bachelor Degree in Technology of Architecture from Mbeya University of Science and Technology. Registered as professional Architectural Technologist by AQRB with Over 7 years of experience.",
     details: [
-      "Projects include: SUA, GPSA, IFAKARA TOWN COUNCIL.",
-      "Expertise in condition surveys, BOQ specifications, QA/QC.",
-      "Experience spans commercial, residential, educational and civic projects.",
+      "Proposed Construction of Administration and Classroom Block at Sokoine University of Agriculture (SUA) Main Campus- Morogoro Region.",
+      "National ID System Expansion Project Phase II (NIDA)."
+    ],
+    expertise: [
+      "Detailed condition survey & site analysis.",
+      "Design proposal preparation.",
+      "Preparation of drawings.",
+      "Assisting in Cost analysis and BOQ specifications.",
+      "Project and Contract management and supervision of construction works."
     ],
     icon: Award,
   },
@@ -315,6 +323,20 @@ export function Organization() {
                         </li>
                       ))}
                     </ul>
+                    
+                    {'expertise' in member && Array.isArray((member as any).expertise) && (
+                      <div className="mt-6 pt-6 border-t border-slate-200">
+                        <div className="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Expertise</div>
+                        <ul className="space-y-3">
+                          {(member as any).expertise.map((e: string, i: number) => (
+                            <li key={i} className="flex items-start gap-3 text-sm text-slate-700">
+                              <ChevronRight className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                              <span className="leading-relaxed">{e}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -332,7 +354,7 @@ export function Organization() {
         {/* ── Team Grid ── */}
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-8 sm:pb-0 mb-20 snap-x snap-mandatory -mx-6 px-6 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-auto sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 pb-8 sm:pb-0 mb-20 snap-x snap-mandatory -mx-6 px-6 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden items-start"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {directors.map((member, idx) => {
@@ -380,12 +402,12 @@ export function Organization() {
                 </div>
 
                 {/* Bio & Details */}
-                <div className="p-6 flex flex-col flex-1">
-                  <p className="text-slate-500 text-sm leading-relaxed font-light mb-5 line-clamp-3">{member.bio}</p>
+                <div className="p-6 flex flex-col">
+                  <p className="text-slate-500 text-sm leading-relaxed font-light mb-5">{member.bio}</p>
 
-                  <div className="mt-auto space-y-2.5">
+                  <div className="space-y-2.5">
                     {/* Projects */}
-                    {member.details.slice(0, 2).map((d, i) => (
+                    {member.details.map((d, i) => (
                       <div key={i} className="flex items-start gap-2.5 text-xs text-slate-600">
                         <ChevronRight className="w-3.5 h-3.5 text-red-500 mt-0.5 flex-shrink-0" />
                         <span className="leading-relaxed">{d}</span>
@@ -395,7 +417,7 @@ export function Organization() {
                     {'expertise' in member && Array.isArray((member as any).expertise) && (
                       <div className="pt-2 border-t border-slate-100 space-y-2">
                         <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Expertise</p>
-                        {(member as any).expertise.slice(0, 2).map((e: string, i: number) => (
+                        {(member as any).expertise.map((e: string, i: number) => (
                           <div key={i} className="flex items-start gap-2.5 text-xs text-slate-600">
                             <ChevronRight className="w-3.5 h-3.5 text-orange-500 mt-0.5 flex-shrink-0" />
                             <span className="leading-relaxed">{e}</span>

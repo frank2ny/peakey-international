@@ -41,7 +41,7 @@ export const projectsData: Project[] = [
     img: "/hero2.jpg",
     value: "USD 38,461,538.46",
     description: "Proposed Construction of Multi-Storey Investment Building for Tanzania Embassy in Nairobi, Kenya.",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2024 - Present",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
     img: "/hero3.jpg",
     value: "USD 25,000,000",
     description: "Proposed Construction of Multi-Storey Apartment Building and Ambassador’s Residence for Tanzania Embassy in Burundi.",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2024 - Present",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -96,7 +96,7 @@ export const projectsData: Project[] = [
     img: "/Tanesco.jpg",
     value: "USD 25,000,000",
     description: "Proposed Construction of Office for Registrar of Political Parties to be Built at Mlimani Area, Dodoma.",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2024 - Present",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -168,7 +168,7 @@ export const projectsData: Project[] = [
     img: "/WEBSITE DEVELOPMENT/ioc1.png",
     value: "USD 19,067,434.05",
     description: "Proposed Integrated Operations Center (IOC) on Plot No. 9 Block 'D' NCC– Dodoma",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -205,7 +205,7 @@ export const projectsData: Project[] = [
     img: "/hero2.jpg",
     value: "USD 15,384,615.38",
     description: "Proposed Construction of Multi Storey Investment Building for Tanzania Embassy in Kinshasa, Congo.",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2023 - Present",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -223,7 +223,7 @@ export const projectsData: Project[] = [
     img: "/hero3.jpg",
     value: "TZS 14,000,000,000",
     description: "Proposed Passenger Waiting Lounge to be Built at Dar es Salaam Port.",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2025 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -242,7 +242,7 @@ export const projectsData: Project[] = [
     img: "/hero2.jpg",
     value: "USD 4,230,769.23",
     description: "Proposed Construction of Multi-Storey Chancery Building & Ambassador Residence for Tanzania Embassy in Muscat, Oman",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2023 - Present",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -260,7 +260,7 @@ export const projectsData: Project[] = [
     img: "/WEBSITE DEVELOPMENT/kibaha.png",
     value: "USD 3,868,245.50",
     description: "Proposed ICT Service Center (ISC) at NIDA Kibaha Offices - Coastal Region.",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -316,7 +316,7 @@ export const projectsData: Project[] = [
     img: "/hero2.jpg",
     value: "TZS 4,657,582,765",
     description: "Provision of Consultancy Services for Design Review and Supervision for Completion of Hostel and Multi Purpose Building at BOT Mwanza",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2024 - Present",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -334,7 +334,7 @@ export const projectsData: Project[] = [
     img: "/hero1.jpg",
     value: "TZS 3,000,000,000",
     description: "Proposed Construction of Factory Scheme at Kisemvule, Mkuranga in Coastal Region Tanzania.",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "Completed 2024",
     highlights: [
       "Design and supervision of Plumbing and Fire Fighting systems",
@@ -352,7 +352,7 @@ export const projectsData: Project[] = [
     img: "/hero3.jpg",
     value: "TZS 2,500,000,000",
     description: "Proposed Construction of Zanzibar Bus Terminal at Kijangwani Area Zanzibar.",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -371,7 +371,7 @@ export const projectsData: Project[] = [
     img: "/hero1.jpg",
     value: "TZS 865,000,000",
     description: "Proposed Design of Ware House Building for the National Examinations Council of Tanzania(NECTA) to be Built at Mbezi Wani Area, in Kinondoni Municipal, Dar es Salaam, Tanzania.",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -390,7 +390,7 @@ export const projectsData: Project[] = [
     img: "/WEBSITE DEVELOPMENT/bamaga.jpg",
     value: "TZS 786,000,000",
     description: "Proposed Design of Printing Factory Building for the National Examinations Council of Tanzania (NECTA) to be Built at Bamaga, in Kinondoni Municipal, Dar es Salaam, Tanzania.",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -428,7 +428,7 @@ export const projectsData: Project[] = [
     img: "/Nssf.jpg",
     value: "Confidential",
     description: "Provision of Consultancy Services for Renovation of NSSF Benjamin William Mkapa Pension Towers",
-    teamLead: "QS. Dr. Mhenga Agneta",
+    teamLead: "QS. Dr. Agneta Mhenga",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -447,7 +447,7 @@ export const projectsData: Project[] = [
     img: "/WEBSITE DEVELOPMENT/DODOMA JIJI.jpg",
     value: "Confidential",
     description: "Proposed Design and Construction Supervision of the City Council of Dodoma Head Office In Dodoma.",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",
@@ -485,7 +485,7 @@ export const projectsData: Project[] = [
     img: "/WEBSITE DEVELOPMENT/GOBA RESIDENTIAL.jpg",
     value: "Confidential",
     description: "Proposed Residential Building to be Built on Plot No:...,      Block \".....\" at Goba, Kinondoni District Dar Es Salaam.",
-    teamLead: "Arch. Dorothea Gervas",
+    teamLead: "Arch. Dorothea Kazoba",
     year: "2024 - Present",
     highlights: [
       "Architectural designs and construction documentation",

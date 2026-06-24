@@ -10,12 +10,12 @@ export function Services() {
     {
       id: "project-management",
       title: "Project Management",
-      img: "/overview.jpg"
+      img: "/pjm.jpeg"
     },
     {
       id: "contract-management",
       title: "Contract Management",
-      img: "/cn.jpg"
+      img: "/cm.jpeg"
     },
     {
       id: "architectural",
@@ -25,7 +25,7 @@ export function Services() {
     {
       id: "quantity-surveying",
       title: "Quantity Surveying",
-      img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=600"
+      img: "/qsm.jpeg"
     },
     {
       id: "mechanical-engineering",
@@ -98,11 +98,13 @@ export function Services() {
             ))}
           </div>
 
+          {/* Download Button Hidden as requested */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.8 }}
+            className="hidden"
           >
             <a
               href="/PEAKEY INTERNATIONAL - GENERAL COMPANY PROFILE 2026.pdf"

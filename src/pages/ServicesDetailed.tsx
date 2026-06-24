@@ -449,7 +449,7 @@ export function ServicesDetailed() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8"
+              className="hidden bg-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden flex-col md:flex-row items-center justify-between gap-8"
             >
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-black z-0 opacity-40"></div>
               <div className="absolute right-0 bottom-0 w-80 h-80 bg-red-600/10 rounded-full blur-[80px] pointer-events-none"></div>
