@@ -5,7 +5,7 @@ import { GraduationCap, ArrowRight } from 'lucide-react';
 export function FeaturedOrganization() {
   const leader = {
     name: "QS. Dr. Agneta Mhenga",
-    image: "/qs_mhenga.jpg",
+    image: "/qsnew.jpeg",
     role: "",
     bio: "QS. Dr. Mhenga Agneta is an Oil and Gas Production Engineer and a Quantity Surveyor holding a PhD and MSc in Oil and Gas Field Development Engineering from China University of Petroleum, China. She also holds a BSc. Degree in Building Economics from Ardhi University. Dr. Mhenga is a certified Executive Woman leader and Lecturer at the University of Dar es Salaam having 12+ years of experience across Tanzania, China, and the UK.",
     highlights: [

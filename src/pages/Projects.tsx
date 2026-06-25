@@ -170,8 +170,8 @@ export function Projects() {
         p.location.toLowerCase().includes(searchQuery.toLowerCase());
       
       const matchesCategory = selectedCategory === 'ALL' || 
-        (selectedCategory === 'GOVERMENT' && p.category === 'Government') ||
-        (selectedCategory === 'COMMERSIAL' && p.category === 'Commercial') ||
+        (selectedCategory === 'GOVERNMENT' && p.category === 'Government') ||
+        (selectedCategory === 'COMMERCIAL' && p.category === 'Commercial') ||
         (selectedCategory === 'INDUSTRIAL' && p.category === 'Industrial') ||
         (selectedCategory === 'RESIDENTIAL' && p.category === 'Residential');
       const matchesStatus = selectedStatus === 'All' || p.status === selectedStatus;
@@ -194,7 +194,7 @@ export function Projects() {
       return 0;
     });
 
-  const categories = ['ALL', 'GOVERMENT', 'COMMERSIAL', 'INDUSTRIAL', 'RESIDENTIAL'];
+  const categories = ['ALL', 'GOVERNMENT', 'COMMERCIAL', 'INDUSTRIAL', 'RESIDENTIAL'];
 
   return (
     <div className="flex flex-col w-full bg-[linear-gradient(to_bottom,theme(colors.slate.50),theme(colors.slate.100)_50%,theme(colors.slate.50))] relative z-10 overflow-hidden min-h-screen">
@@ -269,8 +269,8 @@ export function Projects() {
                   const count = cat === 'ALL' 
                     ? projectsData.length 
                     : projectsData.filter(p => {
-                        if (cat === 'GOVERMENT') return p.category === 'Government';
-                        if (cat === 'COMMERSIAL') return p.category === 'Commercial';
+                        if (cat === 'GOVERNMENT') return p.category === 'Government';
+                        if (cat === 'COMMERCIAL') return p.category === 'Commercial';
                         if (cat === 'INDUSTRIAL') return p.category === 'Industrial';
                         if (cat === 'RESIDENTIAL') return p.category === 'Residential';
                         return false;

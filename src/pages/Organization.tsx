@@ -8,7 +8,7 @@ const leadership = [
   {
     id: "mhenga",
     name: "QS. Dr. Agneta Mhenga",
-    image: "/qs_mhenga.jpg",
+    image: "/qsnew.jpeg",
     // role: "Deputy Honorary Secretary, TIQS",
         role: "Deputy Honorary Secretary, TIQS",
 
@@ -297,7 +297,6 @@ export function Organization() {
                         (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800";
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent lg:bg-gradient-to-r" />
                     {/* Badge */}
                     <div className={`absolute top-5 left-5 flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r ${member.tagColor} text-white text-[9px] font-black uppercase tracking-widest shadow-lg`}>
                       <Icon className="w-3 h-3" />
@@ -382,7 +381,6 @@ export function Organization() {
                       (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800";
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
 
                   {/* Icon badge */}
                   <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/90 backdrop-blur-sm flex items-center justify-center text-red-600 shadow-md">

@@ -133,7 +133,7 @@ export default function App() {
                   <div id="services"><Services /></div>
                   <div id="projects"><FeaturedProjects /></div>
                   <div id="partners"><PartnersMarquee /></div>
-                  <div id="gallery"><Placeholder title={t('nav.gallery')} subtitle="Visual highlights of our global operations." /></div>
+                  {/* <div id="gallery"><Placeholder title={t('nav.gallery')} subtitle="Visual highlights of our global operations." /></div> */}
                   <div id="contact"><Contact /></div>
                 </>
               </Suspense>
